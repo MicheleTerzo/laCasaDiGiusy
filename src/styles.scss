@@ -1,1 +1,15 @@
-/* You can add global styles to this file, and also import other style files */
+@import 'src/style/variables';
+@import 'src/style/custom';
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+
+.debug {
+  border : 1px solid red;
+}
+
+.custom-color {
+  color : var(--custom-primary)
+}
+
+.custom-bg {
+  background : var(--custom-primary)
+}

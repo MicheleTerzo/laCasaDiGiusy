@@ -1,0 +1,36 @@
+<div class="grid custom-header">
+  <div class="col-6 pl-4 pb-0">
+    <img alt=""
+         class="logo"
+         src="assets/img/logo.png">
+  </div>
+  <div class="col-6 pr-4 pb-0 flex justify-content-end align-items-center">
+    <p-button (click)="onShowMenuClick()"
+              *ngIf="!showMobileMenu"
+              icon="fa-solid fa-bars"
+              styleClass="text-2xl p-button-rounded p-button-text custom-color"/>
+  </div>
+</div>
+<p-sidebar [(visible)]="showMobileMenu"
+           [showCloseIcon]="false"
+           position="right">
+  <ng-template pTemplate="header">
+    <div class="grid w-full">
+      <div class="col-12 flex justify-content-end">
+        <p-button (click)="onCloseMenu()"
+                  icon="fa-solid fa-times"
+                  styleClass="text-2xl p-button-rounded p-button-text custom-color"/>
+      </div>
+      <div class="col-12 flex justify-content-center align-items-center">
+        <h1 class="sidebar-title text-4xl">La Casa di Giusy</h1>
+      </div>
+    </div>
+  </ng-template>
+  <div class="grid mt-3">
+    <div *ngFor="let item of menuItems"
+         class="col-12 mb-2 mt-2 flex justify-content-start align-items-center">
+      <h4 class="m-0 p-0 cursor-pointer">{{item.label.toUpperCase()}}</h4>
+    </div>
+  </div>
+</p-sidebar>
+
