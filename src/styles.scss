@@ -6,10 +6,31 @@
   border : 1px solid red;
 }
 
+body, html {
+  height             : 100%;
+  margin             : 0 !important;
+  -ms-overflow-style : none; /* IE and Edge */
+  overflow-x         : hidden;
+  scrollbar-width    : none; /* Firefox */
+  width              : 100%;
+}
+
+*::-webkit-scrollbar {
+  display : none;
+}
+
+header {
+  margin-top : 8px;
+}
+
 .custom-color {
   color : var(--custom-primary)
 }
 
 .custom-bg {
   background : var(--custom-primary)
+}
+
+.sidebar-title {
+  font-family : 'Great Vibes', cursive;
 }

@@ -1,13 +1,10 @@
 .custom-header {
   background : var(--primary-bg-color);
+  height     : var(--header-height);
 
   .logo {
     width : 100px;
   }
 }
 
-.sidebar-title {
-  color       : var(--custom-primary);
-  font-family : 'Great Vibes', cursive;
-}
 
