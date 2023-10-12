@@ -1,12 +1,17 @@
 @import 'src/style/variables';
 @import 'src/style/custom';
-@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Lato:ital,wght@0,300;0,400;0,700;1,300&family=Montserrat:wght@100;300;500&display=swap');
 
 .debug {
   border : 1px solid red;
 }
 
+.debug2 {
+  border : 1px solid green;
+}
+
 body, html {
+  font-family        : 'Lato', sans-serif;
   height             : 100%;
   margin             : 0 !important;
   -ms-overflow-style : none; /* IE and Edge */
@@ -20,6 +25,8 @@ body, html {
 }
 
 header {
+  background : var(--primary-bg-color);
+  height     : var(--header-height);
   margin-top : 8px;
 }
 
@@ -31,6 +38,18 @@ header {
   background : var(--custom-primary)
 }
 
-.sidebar-title {
+.hand-written-font {
   font-family : 'Great Vibes', cursive;
+}
+
+.custom-section-title {
+  color          : var(--secondary-color);
+  font-family    : 'Montserrat', sans-serif;
+  font-weight    : normal;
+  letter-spacing : 0.6rem;
+}
+
+.custom-divider {
+  height: 1px;
+  background: var(--secondary-light-color);
 }

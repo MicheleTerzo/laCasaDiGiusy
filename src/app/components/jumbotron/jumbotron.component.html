@@ -1,0 +1,20 @@
+<div class="about-section">
+  <div class="p-3 start-container flex flex-column justify-content-center align-items-center">
+    <h4 class="m-0 mb-3 text-white font-italic">B&B EXPERIENCE</h4>
+    <h1 class="hand-written-font text-white text-6xl m-0">La Casa di Giusy</h1>
+    <button class="book-now-button mt-3 p-3"
+            pButton>
+      <span class="book-now-text">PRENOTA ORA</span>
+      <img alt="booking-logo"
+           class="booking-logo"
+           src="assets/img/booking-logo.png">
+    </button>
+  </div>
+  <div class="end-container flex justify-content-end align-items-end p-5">
+    <p-splitButton [model]="items"
+                   appendTo="body"
+                   icon="fa-solid fa-earth-europe"
+                   label="Lingua"
+                   styleClass="p-button-sm p-button-outlined"/>
+  </div>
+</div>

@@ -1,34 +1,36 @@
 import {Component} from '@angular/core';
-import {AnimateModule} from 'primeng/animate';
-import {ButtonModule} from 'primeng/button';
-import {SplitButtonModule} from 'primeng/splitbutton';
-import {MenuItem} from 'primeng/api';
+import {PerkBoxComponent} from '../perk-box/perk-box.component';
+import {NgForOf} from '@angular/common';
+
+interface PerkBoxInterface {
+  title: string;
+  iconClass: string;
+  description: string;
+}
 
 @Component({
   selector: 'app-about',
   standalone: true,
-  imports: [
-    AnimateModule,
-    ButtonModule,
-    SplitButtonModule
-  ],
+  imports: [PerkBoxComponent, NgForOf],
   templateUrl: './about.component.html',
   styleUrls: ['./about.component.scss']
 })
 export class AboutComponent {
-  items: MenuItem[] = [];
-
-  constructor() {
-    this.items = [
-      {label: 'English', command: () => this.changeLanguage('en')},
-      {label: 'Detusch', command: () => this.changeLanguage('de')},
-      {label: 'Francois', command: () => this.changeLanguage('fr')},
-      {label: 'Espanol', command: () => this.changeLanguage('es')},
-      {label: 'Italiano', command: () => this.changeLanguage('it')}
-    ];
-  }
-
-  private changeLanguage(lang: string): void {
-    console.log(lang);
-  }
+  protected aboutPerks: PerkBoxInterface[] = [
+    {
+      title: 'PARCHEGGIO PRIVATO',
+      description: 'Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam.',
+      iconClass: 'fa-solid fa-square-parking'
+    },
+    {
+      title: 'PET FRIENDLY',
+      description: 'Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam.',
+      iconClass: 'fa-solid fa-dog'
+    },
+    {
+      title: 'ACCESSIBILE',
+      description: 'Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam.',
+      iconClass: 'fa-brands fa-accessible-icon'
+    }
+  ];
 }
