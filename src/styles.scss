@@ -11,6 +11,7 @@
 }
 
 body, html {
+  background         : var(--primary-bg-color);
   font-family        : 'Lato', sans-serif;
   height             : 100%;
   margin             : 0 !important;
@@ -43,13 +44,13 @@ header {
 }
 
 .custom-section-title {
-  color          : var(--secondary-color);
+  color          : var(--primary-darker-color);
   font-family    : 'Montserrat', sans-serif;
   font-weight    : normal;
   letter-spacing : 0.6rem;
 }
 
 .custom-divider {
-  height: 1px;
-  background: var(--secondary-light-color);
+  background : var(--primary-darker-color);
+  height     : 1px;
 }
