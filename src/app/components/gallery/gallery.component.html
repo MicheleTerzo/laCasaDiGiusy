@@ -1,0 +1,17 @@
+<h1 class="mt-0 mb-5 text-5xl text-center">Galleria</h1>
+<div class="flex flex-column justify-content-center align-items-center h-full">
+  <p-galleria [autoPlay]="true"
+              [circular]="true"
+              [containerStyle]="{ 'max-width': '640px' }"
+              [showItemNavigators]="true"
+              [showThumbnails]="false"
+              [value]="images">
+    <ng-template let-item
+                 pTemplate="item">
+      <img [src]="item"
+           alt="image"
+           style="width: 100%; display: block;"/>
+    </ng-template>
+  </p-galleria>
+</div>
+

@@ -1,12 +1,7 @@
 import {Component} from '@angular/core';
 import {PerkBoxComponent} from '../perk-box/perk-box.component';
 import {NgForOf} from '@angular/common';
-
-interface PerkBoxInterface {
-  title: string;
-  iconClass: string;
-  description: string;
-}
+import {PerkBoxInterface} from '../../interfaces/perk-box.interface';
 
 @Component({
   selector: 'app-about',

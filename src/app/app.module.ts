@@ -7,6 +7,8 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {JumbotronComponent} from './components/jumbotron/jumbotron.component';
 import {RoomsComponent} from './components/rooms/rooms.component';
 import {AboutComponent} from './components/about/about.component';
+import {GalleryComponent} from './components/gallery/gallery.component';
+import {ContactsComponent} from './components/contacts/contacts.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import {AboutComponent} from './components/about/about.component';
     HeaderComponent,
     JumbotronComponent,
     RoomsComponent,
-    AboutComponent
+    AboutComponent,
+    GalleryComponent,
+    ContactsComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

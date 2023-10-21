@@ -1,10 +1,10 @@
-<h1 class="mt-0 mb-5 text-5xl">Le Camere</h1>
+<h1 class="mt-0 mb-5 text-5xl text-white">Le Camere</h1>
 <div class="grid">
   <div class="col-12 md:col-6 lg:col-4 mb-8">
     <div class="room ">
       <div class="image-container">
         <img alt="room image"
-             src="assets/img/IMG-2-fixed.png">
+             src="assets/img/ROOM-1_1.jpg">
       </div>
       <div class="description p-3">
         <h1>Camera doppia</h1>
@@ -12,10 +12,12 @@
            Lucerne.</p>
         <div class="flex flex-column">
           <div class="flex align-items-center mb-3">
-            <i class="fa-solid fa-tv text-3xl text-primary mr-2"></i> <span>32" Tv</span>
+            <i class="fa-solid fa-tv text-3xl text-primary mr-2"></i>
+            <span>32" Tv</span>
           </div>
           <div class="flex align-items-center">
-            <i class="fa-solid fa-tv text-3xl text-primary mr-2"></i> <span>32" Tv</span>
+            <i class="fa-solid fa-tv text-3xl text-primary mr-2"></i>
+            <span>32" Tv</span>
           </div>
         </div>
       </div>
@@ -25,7 +27,7 @@
     <div class="room">
       <div class="image-container">
         <img alt="room image"
-             src="assets/img/IMG-2-fixed.png">
+             src="assets/img/ROOM-1_1.jpg">
       </div>
       <div class="description p-3">
         <h1>Camera doppia</h1>
@@ -33,35 +35,53 @@
            Lucerne.</p>
         <div class="flex flex-column">
           <div class="flex align-items-center mb-3">
-            <i class="fa-solid fa-tv text-3xl text-primary mr-2"></i> <span>32" Tv</span>
+            <i class="fa-solid fa-tv text-3xl text-primary mr-2"></i>
+            <span>32" Tv</span>
           </div>
           <div class="flex align-items-center">
-            <i class="fa-solid fa-tv text-3xl text-primary mr-2"></i> <span>32" Tv</span>
+            <i class="fa-solid fa-tv text-3xl text-primary mr-2"></i>
+            <span>32" Tv</span>
           </div>
         </div>
       </div>
     </div>
   </div>
-  <div class="col-12 md:col-6 lg:col-4">
+  <div class="col-12 md:col-6 lg:col-4 mb-8">
     <div class="room">
       <div class="image-container">
         <img alt="room image"
-             src="assets/img/IMG-2-fixed.png">
+             src="assets/img/ROOM-1_1.jpg">
       </div>
       <div class="description p-3">
-        <h1>Camera doppia</h1>
+        <h1>Camera tripla</h1>
         <p>Beautiful design with modern furnishings including a glamorous bay window with your own private view of
            Lucerne.</p>
         <div class="flex flex-column">
           <div class="flex align-items-center mb-3">
-            <i class="fa-solid fa-tv text-3xl text-primary mr-2"></i> <span>32" Tv</span>
+            <i class="fa-solid fa-tv text-3xl text-primary mr-2"></i>
+            <span>32" Tv</span>
           </div>
           <div class="flex align-items-center">
-            <i class="fa-solid fa-tv text-3xl text-primary mr-2"></i> <span>32" Tv</span>
+            <i class="fa-solid fa-tv text-3xl text-primary mr-2"></i>
+            <span>32" Tv</span>
           </div>
         </div>
       </div>
     </div>
   </div>
+</div>
+<div class="custom-divider-inverted mt-5 mb-5"></div>
+<div class="grid">
+  <div class="col-12">
+    <h1 class="mt-0 mb-5 text-5xl text-white text-center">Bonus principali</h1>
+  </div>
+  <ng-container *ngFor="let perk of facilitiesPerk">
+    <div class="col-12 md:col-6 lg:col-4">
+      <app-perk-box [description]="perk.description"
+                    [iconClass]="perk.iconClass"
+                    [invertedColor]="true"
+                    [title]="perk.title"/>
+    </div>
+  </ng-container>
 </div>
 

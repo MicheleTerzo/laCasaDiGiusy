@@ -3,7 +3,7 @@
     height : 80%;
 
     img {
-      border-radius      : 1rem;
+      border-radius      : .5rem;
       -webkit-box-shadow : 0 2px 8px -2px #000000;
       box-shadow         : 0 2px 8px -2px #000000;
       width              : 100%;
@@ -13,8 +13,8 @@
   .description {
     background                 : #FFF;
     border                     : 2px solid #FFF;
-    border-bottom-left-radius  : 1rem;
-    border-bottom-right-radius : 1rem;
+    border-bottom-left-radius  : .5rem;
+    border-bottom-right-radius : .5rem;
     -webkit-box-shadow         : 0 2px 8px -2px #000000;
     box-shadow                 : 0 2px 8px -2px #000000;
     margin                     : -30px auto 0 auto;
