@@ -44,14 +44,14 @@ header {
 }
 
 .custom-section-title {
-  color          : var(--primary-darker-color);
+  color          : var(--custom-primary);
   font-family    : 'Montserrat', sans-serif;
   font-weight    : normal;
   letter-spacing : 0.6rem;
 }
 
 .custom-divider {
-  background : var(--primary-darker-color);
+  background : var(--custom-primary);
   height     : 1px;
 }
 
