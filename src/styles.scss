@@ -17,6 +17,7 @@ body, html {
   margin             : 0 !important;
   -ms-overflow-style : none; /* IE and Edge */
   overflow-x         : hidden;
+  padding-top        : var(--header-height);
   scrollbar-width    : none; /* Firefox */
   width              : 100%;
 }
@@ -25,39 +26,7 @@ body, html {
   display : none;
 }
 
-header {
-  background : var(--primary-bg-color);
-  height     : var(--header-height);
-  margin-top : 8px;
+.logo {
+  width : 100px;
 }
-
-.custom-color {
-  color : var(--custom-primary)
-}
-
-.custom-bg {
-  background : var(--custom-primary)
-}
-
-.hand-written-font {
-  font-family : 'Great Vibes', cursive;
-}
-
-.custom-section-title {
-  color          : var(--custom-primary);
-  font-family    : 'Montserrat', sans-serif;
-  font-weight    : normal;
-  letter-spacing : 0.6rem;
-}
-
-.custom-divider {
-  background : var(--custom-primary);
-  height     : 1px;
-}
-
-.custom-divider-inverted {
-  background : var(--primary-bg-color);
-  height     : 1px;
-}
-
 

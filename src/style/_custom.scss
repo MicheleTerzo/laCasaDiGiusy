@@ -1,10 +1,62 @@
 .p-sidebar .p-sidebar-header {
-  display         : flex;
-  justify-content : center;
   align-items     : center;
   background      : var(--primary-bg-color);
+  display         : flex;
+  justify-content : center;
 }
 
-.h-50rem{
-  height: 50rem;
+.p-button.custom-primary-button {
+  background : var(--custom-primary);
+  border     : 1px solid var(--custom-primary);
+}
+
+.p-splitbutton.p-button-outlined > .p-button {
+  color : var(--custom-primary);
+
+  &:focus {
+    -moz-box-shadow    : none;
+    -webkit-box-shadow : none;
+    box-shadow         : none;
+  }
+}
+
+.h-50rem {
+  height : 50rem;
+}
+
+.custom-color {
+  color : var(--custom-primary)
+}
+
+.custom-bg {
+  background : var(--custom-primary)
+}
+
+.hand-written-font {
+  font-family : 'Great Vibes', cursive;
+}
+
+.custom-section-title {
+  color          : var(--custom-primary);
+  font-family    : 'Montserrat', sans-serif;
+  font-weight    : normal;
+  letter-spacing : 0.6rem;
+}
+
+.custom-divider {
+  background : var(--custom-primary);
+  height     : 1px;
+}
+
+.custom-divider-inverted {
+  background : var(--primary-bg-color);
+  height     : 1px;
+}
+
+.invisible-header {
+  background : transparent;
+}
+
+.visible-header {
+  background : var(--primary-bg-color);
 }

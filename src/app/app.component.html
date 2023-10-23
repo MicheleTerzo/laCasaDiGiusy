@@ -1,24 +1,65 @@
 <header>
-  <app-header/>
+  <div class="grid h-full">
+    <div class="col-6 flex align-items-center pl-3 pb-0">
+      <img alt=""
+           class="logo"
+           src="assets/img/logo.png">
+    </div>
+    <div class="col-6 pr-3 pb-0 flex justify-content-end align-items-center">
+      <p-button (click)="showSidebar()"
+                icon="fa-solid fa-bars"
+                styleClass="text-2xl p-button-rounded p-button-text custom-color"/>
+    </div>
+  </div>
 </header>
 <main>
+  <p-sidebar [(visible)]="showMobileMenu"
+             [showCloseIcon]="false"
+             position="right">
+    <ng-template pTemplate="header">
+      <div class="grid w-full">
+        <div class="col-12 flex justify-content-end">
+          <p-button (click)="onCloseMenu()"
+                    icon="fa-solid fa-times"
+                    styleClass="text-2xl p-button-rounded p-button-text custom-color"/>
+        </div>
+        <div class="col-12 flex justify-content-center align-items-center">
+          <h1 class="hand-written-font custom-color text-4xl">La Casa di Giusy</h1>
+        </div>
+      </div>
+    </ng-template>
+    <div class="grid mt-3">
+      <div *ngFor="let item of menuItems"
+           class="col-12 mb-2 mt-2 flex justify-content-start align-items-center">
+        <h4 (click)="navigateToSection(item.sectionName)"
+            class="m-0 p-0 cursor-pointer">{{item.label | uppercase}}</h4>
+      </div>
+    </div>
+  </p-sidebar>
   <section id="jumbotron">
     <app-jumbotron/>
   </section>
-  <section class="p-3"
+  <section #aboutSection
+           class="py-8 px-3"
            id="about">
     <app-about/>
   </section>
-  <section class="py-8 px-3"
+  <section #roomsSection
+           class="py-8 px-3"
            id="rooms">
     <app-rooms/>
   </section>
-  <section class="py-8 px-3 h-50rem"
+  <section #gallerySection
+           class="py-8 px-3 h-50rem"
            id="gallery">
     <app-gallery/>
   </section>
-  <section class="py-8 px-3"
+  <section #contactsSection
+           class="py-8 px-3"
            id="contacts">
     <app-contacts/>
   </section>
 </main>
+<footer>
+  <app-footer/>
+</footer>
