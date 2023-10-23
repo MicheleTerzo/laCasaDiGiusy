@@ -1,5 +1,5 @@
-<header>
-  <div class="grid h-full">
+<header [ngClass]="{'invisible-header': isWindowAtTop, 'visible-header':!isWindowAtTop}">
+  <div class="grid h-full ">
     <div class="col-6 flex align-items-center pl-3 pb-0">
       <img alt=""
            class="logo"
@@ -40,22 +40,22 @@
     <app-jumbotron/>
   </section>
   <section #aboutSection
-           class="py-8 px-3"
+           class="px-3 pb-8"
            id="about">
     <app-about/>
   </section>
   <section #roomsSection
-           class="py-8 px-3"
+           class="px-3 pb-8"
            id="rooms">
     <app-rooms/>
   </section>
   <section #gallerySection
-           class="py-8 px-3 h-50rem"
+           class="px-3 pb-8 h-50rem"
            id="gallery">
     <app-gallery/>
   </section>
   <section #contactsSection
-           class="py-8 px-3"
+           class="px-3 pb-8"
            id="contacts">
     <app-contacts/>
   </section>

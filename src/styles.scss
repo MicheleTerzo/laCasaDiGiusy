@@ -17,9 +17,10 @@ body, html {
   margin             : 0 !important;
   -ms-overflow-style : none; /* IE and Edge */
   overflow-x         : hidden;
-  padding-top        : var(--header-height);
+  //padding-top        : var(--header-height);
   scrollbar-width    : none; /* Firefox */
   width              : 100%;
+
 }
 
 *::-webkit-scrollbar {

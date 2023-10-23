@@ -4,8 +4,8 @@
   background-image      : url("../assets/img/ROOM-1_1.jpg");
   background-position   : center;
   background-size       : cover;
-  height                : calc(100vh - var(--header-height));
-  margin-top            : -8rem;
+  height                : 100vh;
+  //margin-top            : -8rem;
 }
 
 #rooms {
@@ -15,6 +15,10 @@
 #contacts {
   background : var(--secondary-bg-color);
   color      : #FFF;
+}
+
+section {
+  padding-top : calc(var(--header-height) + 1rem);
 }
 
 header {

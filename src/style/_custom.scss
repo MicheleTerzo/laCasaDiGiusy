@@ -55,8 +55,10 @@
 
 .invisible-header {
   background : transparent;
+  transition : background-color 300ms ease-in-out;
 }
 
 .visible-header {
   background : var(--primary-bg-color);
+  transition : background-color 300ms ease-in-out;
 }

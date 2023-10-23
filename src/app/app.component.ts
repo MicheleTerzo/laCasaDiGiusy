@@ -1,4 +1,4 @@
-import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
+import {AfterViewInit, Component, ElementRef, ViewChild} from '@angular/core';
 import {SECTIONS} from './utils/enums';
 
 @Component({
@@ -6,11 +6,13 @@ import {SECTIONS} from './utils/enums';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements AfterViewInit {
   @ViewChild('aboutSection') aboutSection?: ElementRef;
   @ViewChild('roomsSection') roomsSection?: ElementRef;
   @ViewChild('gallerySection') gallerySection?: ElementRef;
   @ViewChild('contactsSection') contactsSection?: ElementRef;
+  @ViewChild('headerMadonna') headerMadonna: any;
+  isWindowAtTop = true;
   protected showMobileMenu = false;
   protected menuItems = [
     {
@@ -30,23 +32,13 @@ export class AppComponent implements OnInit {
       sectionName: SECTIONS.CONTACTS
     }
   ];
-  protected isWindowAtTop = true;
 
-  onWindowScroll(event: any) {
-    const targetScrollTop = event.target.scrollTop;
-    this.isWindowAtTop = targetScrollTop <= 50;
-    /*if (this.isWindowAtTop) {
-      this.headerElement?.nativeElement.classList.add('invisible-header');
-      this.headerElement?.nativeElement.classList.remove('visible-header');
-    }else {
-      this.headerElement?.nativeElement.classList.remove('invisible-header');
-      this.headerElement?.nativeElement.classList.add('visible-header');
-    }*/
-    console.log(this.isWindowAtTop, targetScrollTop);
-  }
-
-  ngOnInit(): void {
-    window.addEventListener('scroll', this.onWindowScroll, true);
+  ngAfterViewInit(): void {
+    window.addEventListener('scroll', (event) => {
+      // @ts-ignore
+      const targetScrollTop = event?.target.scrollTop;
+      this.isWindowAtTop = targetScrollTop <= 50;
+    }, true);
   }
 
   protected onCloseMenu(): void {
@@ -54,6 +46,7 @@ export class AppComponent implements OnInit {
   }
 
   protected navigateToSection(sectionName: SECTIONS): void {
+    console.log(this.isWindowAtTop);
     this.showMobileMenu = false;
     let htmlElement;
     switch (sectionName) {
