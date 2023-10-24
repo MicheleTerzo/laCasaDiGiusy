@@ -1,6 +1,6 @@
 .p-sidebar .p-sidebar-header {
   align-items     : center;
-  background      : var(--primary-bg-color);
+  background      : var(--header-bg-color);
   display         : flex;
   justify-content : center;
 }
@@ -59,6 +59,13 @@
 }
 
 .visible-header {
-  background : var(--primary-bg-color);
+  background : var(--header-bg-color);
   transition : background-color 300ms ease-in-out;
+}
+
+.scroll-top-button {
+  left     : 80%;
+  position : fixed;
+  top      : 90%;
+  z-index  : 999;
 }

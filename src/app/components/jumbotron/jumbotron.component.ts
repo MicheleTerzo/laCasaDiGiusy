@@ -1,8 +1,10 @@
-import {Component} from '@angular/core';
+import {Component, inject} from '@angular/core';
 import {AnimateModule} from 'primeng/animate';
 import {ButtonModule} from 'primeng/button';
 import {SplitButtonModule} from 'primeng/splitbutton';
 import {MenuItem} from 'primeng/api';
+import {BOOKING_URL} from '../../config';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-jumbotron',
@@ -17,6 +19,8 @@ import {MenuItem} from 'primeng/api';
 })
 export class JumbotronComponent {
   items: MenuItem[] = [];
+  bookingUrl = BOOKING_URL;
+  private readonly router = inject(Router);
 
   constructor() {
     this.items = [
@@ -26,6 +30,10 @@ export class JumbotronComponent {
       {label: 'Espanol', command: () => this.changeLanguage('es')},
       {label: 'Italiano', command: () => this.changeLanguage('it')}
     ];
+  }
+
+  navigateToBooking() {
+    window.open(BOOKING_URL, '_blank');
   }
 
   private changeLanguage(lang: string): void {

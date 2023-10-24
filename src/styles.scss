@@ -20,7 +20,10 @@ body, html {
   //padding-top        : var(--header-height);
   scrollbar-width    : none; /* Firefox */
   width              : 100%;
+}
 
+main {
+  position : relative;
 }
 
 *::-webkit-scrollbar {

@@ -1,5 +1,5 @@
 <header [ngClass]="{'invisible-header': isWindowAtTop, 'visible-header':!isWindowAtTop}">
-  <div class="grid h-full ">
+  <div class="grid h-full">
     <div class="col-6 flex align-items-center pl-3 pb-0">
       <img alt=""
            class="logo"
@@ -32,11 +32,12 @@
       <div *ngFor="let item of menuItems"
            class="col-12 mb-2 mt-2 flex justify-content-start align-items-center">
         <h4 (click)="navigateToSection(item.sectionName)"
+            [class]="item.styleClass"
             class="m-0 p-0 cursor-pointer">{{item.label | uppercase}}</h4>
       </div>
     </div>
   </p-sidebar>
-  <section id="jumbotron">
+  <section #jumbotronSection id="jumbotron">
     <app-jumbotron/>
   </section>
   <section #aboutSection
@@ -59,6 +60,10 @@
            id="contacts">
     <app-contacts/>
   </section>
+  <p-button (onClick)="scrollToTop()"
+            *ngIf="!isWindowAtTop"
+            icon="fa-solid fa-arrow-up"
+            styleClass="scroll-top-button custom-primary-button p-button-rounded text-2xl"/>
 </main>
 <footer>
   <app-footer/>

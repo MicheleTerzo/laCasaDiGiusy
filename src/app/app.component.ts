@@ -1,5 +1,6 @@
 import {AfterViewInit, Component, ElementRef, ViewChild} from '@angular/core';
 import {SECTIONS} from './utils/enums';
+import {BOOKING_URL} from './config';
 
 @Component({
   selector: 'app-root',
@@ -11,25 +12,34 @@ export class AppComponent implements AfterViewInit {
   @ViewChild('roomsSection') roomsSection?: ElementRef;
   @ViewChild('gallerySection') gallerySection?: ElementRef;
   @ViewChild('contactsSection') contactsSection?: ElementRef;
-  @ViewChild('headerMadonna') headerMadonna: any;
+  @ViewChild('jumbotronSection') jumbotronSection?: ElementRef;
   isWindowAtTop = true;
   protected showMobileMenu = false;
   protected menuItems = [
     {
       label: 'Chi siamo',
-      sectionName: SECTIONS.ABOUT
+      sectionName: SECTIONS.ABOUT,
+      styleClass: ''
     },
     {
       label: 'Camere',
-      sectionName: SECTIONS.ROOMS
+      sectionName: SECTIONS.ROOMS,
+      styleClass: ''
     },
     {
       label: 'Galleria',
-      sectionName: SECTIONS.GALLERY
+      sectionName: SECTIONS.GALLERY,
+      styleClass: ''
     },
     {
       label: 'Contatti',
-      sectionName: SECTIONS.CONTACTS
+      sectionName: SECTIONS.CONTACTS,
+      styleClass: ''
+    },
+    {
+      label: 'Prenota',
+      sectionName: SECTIONS.BOOK,
+      styleClass: 'custom-color'
     }
   ];
 
@@ -46,7 +56,6 @@ export class AppComponent implements AfterViewInit {
   }
 
   protected navigateToSection(sectionName: SECTIONS): void {
-    console.log(this.isWindowAtTop);
     this.showMobileMenu = false;
     let htmlElement;
     switch (sectionName) {
@@ -62,6 +71,9 @@ export class AppComponent implements AfterViewInit {
       case SECTIONS.CONTACTS:
         htmlElement = this.contactsSection?.nativeElement;
         break;
+      case SECTIONS.BOOK:
+        window.open(BOOKING_URL, '_blank');
+        break;
     }
     if (htmlElement) {
       htmlElement.scrollIntoView({behavior: 'smooth'});
@@ -70,5 +82,11 @@ export class AppComponent implements AfterViewInit {
 
   protected showSidebar() {
     this.showMobileMenu = true;
+  }
+
+  protected scrollToTop() {
+    if (this.jumbotronSection) {
+      this.jumbotronSection.nativeElement.scrollIntoView({behavior: 'smooth'});
+    }
   }
 }
