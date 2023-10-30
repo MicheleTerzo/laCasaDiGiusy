@@ -2,13 +2,15 @@ import {Component} from '@angular/core';
 import {NgForOf} from '@angular/common';
 import {PerkBoxComponent} from '../perk-box/perk-box.component';
 import {PerkBoxInterface} from '../../interfaces/perk-box.interface';
+import {GalleriaModule} from 'primeng/galleria';
 
 @Component({
   selector: 'app-rooms',
   standalone: true,
   imports: [
     NgForOf,
-    PerkBoxComponent
+    PerkBoxComponent,
+    GalleriaModule
   ],
   templateUrl: './rooms.component.html',
   styleUrls: ['./rooms.component.scss']
