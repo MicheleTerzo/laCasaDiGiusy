@@ -12,7 +12,8 @@
                   icon="fa-solid fa-bars"
                   styleClass="text-2xl p-button-rounded p-button-text custom-color"/>
         <ng-container *ngIf="!isMobile">
-          <div *ngFor="let item of navigationItems"
+          <div (click)="navigateToSection(item.sectionName)"
+               *ngFor="let item of navigationItems"
                class="mx-3 cursor-pointer text-lg custom-hover">
             <span [class]="item.styleClass">{{item.label | translate | uppercase}}</span>
           </div>
