@@ -26,7 +26,7 @@ app-maps {
 }
 
 section {
-  padding-top : calc(var(--header-height) + .5rem);
+  padding-top : calc(var(--header-height) - .5rem);
 }
 
 header {

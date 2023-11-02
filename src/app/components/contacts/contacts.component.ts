@@ -1,9 +1,14 @@
 import {Component} from '@angular/core';
+import {TranslateModule} from '@ngx-translate/core';
+import {UpperCasePipe} from '@angular/common';
 
 @Component({
   selector: 'app-contacts',
   standalone: true,
-  imports: [],
+  imports: [
+    TranslateModule,
+    UpperCasePipe
+  ],
   templateUrl: './contacts.component.html',
   styleUrls: ['./contacts.component.scss']
 })

@@ -27,6 +27,11 @@ export class AboutComponent {
       title: 'Breakfast included',
       description: 'Breakfast description',
       iconClass: 'fa-solid fa-mug-saucer'
+    },
+    {
+      title: 'Shuttle service',
+      description: 'Shuttle service description',
+      iconClass: 'fa-solid fa-van-shuttle'
     }
   ];
 }

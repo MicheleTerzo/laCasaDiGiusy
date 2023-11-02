@@ -1,8 +1,18 @@
-.p-sidebar .p-sidebar-header {
-  align-items     : center;
-  background      : var(--header-bg-color);
-  display         : flex;
-  justify-content : center;
+.p-sidebar {
+  .p-sidebar-header {
+    align-items     : center;
+    background      : var(--header-bg-color);
+    display         : flex;
+    justify-content : center;
+  }
+
+  .p-sidebar-content {
+    background : var(--primary-bg-color);
+  }
+
+  .p-sidebar-footer {
+    background : var(--primary-bg-color);
+  }
 }
 
 .p-button.custom-primary-button {

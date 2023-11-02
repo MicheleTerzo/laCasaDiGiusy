@@ -29,7 +29,7 @@
       </div>
     </ng-template>
     <div class="grid mt-3">
-      <div *ngFor="let item of menuItems"
+      <div *ngFor="let item of navigationItems"
            class="col-12 mb-2 mt-2 flex justify-content-start align-items-center">
         <h4 (click)="navigateToSection(item.sectionName)"
             [class]="item.styleClass"
@@ -39,7 +39,8 @@
   </p-sidebar>
   <section #jumbotronSection
            id="jumbotron">
-    <app-jumbotron (changeLanguage)="changeLanguage($event)"/>
+    <app-jumbotron [languageControl]="languageControl"
+                   [languageOptions]="languageOptions"/>
   </section>
   <section #aboutSection
            class="px-3 pb-8"
@@ -57,6 +58,7 @@
     <app-gallery/>
   </section>
   <section #mapSection
+           class="pb-8"
            id="maps">
     <app-maps/>
   </section>

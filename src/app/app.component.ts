@@ -2,6 +2,8 @@ import {AfterViewInit, Component, ElementRef, inject, ViewChild} from '@angular/
 import {LANGUAGES, SECTIONS} from './utils/enums';
 import {BOOKING_URL} from './config';
 import {TranslateService} from '@ngx-translate/core';
+import {FormControl} from '@angular/forms';
+import {takeUntilDestroyed} from '@angular/core/rxjs-interop';
 
 @Component({
   selector: 'app-root',
@@ -14,9 +16,12 @@ export class AppComponent implements AfterViewInit {
   @ViewChild('gallerySection') gallerySection?: ElementRef;
   @ViewChild('contactsSection') contactsSection?: ElementRef;
   @ViewChild('jumbotronSection') jumbotronSection?: ElementRef;
+  @ViewChild('mapSection') mapsSection?: ElementRef;
+  languageControl: FormControl<LANGUAGES>;
   isWindowAtTop = true;
+  languageOptions: { label: string, value: LANGUAGES }[] = [];
   protected showMobileMenu = false;
-  protected menuItems = [
+  protected navigationItems = [
     {
       label: 'About',
       sectionName: SECTIONS.ABOUT,
@@ -53,6 +58,9 @@ export class AppComponent implements AfterViewInit {
   constructor() {
     this._translateService.setDefaultLang(LANGUAGES.IT);
     this._translateService.use(LANGUAGES.IT);
+    this.buildLanguagesOptions();
+    this.languageControl = new FormControl<LANGUAGES>(LANGUAGES.IT, {nonNullable: true});
+    this.initLanguageSubscription();
   }
 
   ngAfterViewInit(): void {
@@ -88,6 +96,9 @@ export class AppComponent implements AfterViewInit {
       case SECTIONS.CONTACTS:
         htmlElement = this.contactsSection?.nativeElement;
         break;
+      case SECTIONS.MAPS:
+        htmlElement = this.mapsSection?.nativeElement;
+        break;
       case SECTIONS.BOOK:
         window.open(BOOKING_URL, '_blank');
         break;
@@ -105,5 +116,21 @@ export class AppComponent implements AfterViewInit {
     if (this.jumbotronSection) {
       this.jumbotronSection.nativeElement.scrollIntoView({behavior: 'smooth'});
     }
+  }
+
+  private buildLanguagesOptions(): void {
+    this.languageOptions = [
+      {label: 'English', value: LANGUAGES.EN},
+      {label: 'Detusch', value: LANGUAGES.DE},
+      {label: 'Francois', value: LANGUAGES.FR},
+      {label: 'Espanol', value: LANGUAGES.ES},
+      {label: 'Italiano', value: LANGUAGES.IT}
+    ];
+  }
+
+  private initLanguageSubscription() {
+    this.languageControl.valueChanges.pipe(takeUntilDestroyed()).subscribe((value) => {
+      this._translateService.use(value);
+    });
   }
 }

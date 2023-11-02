@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "lacasadigiusy-64d11"
+  },
+  "targets": {
+    "lacasadigiusy-64d11": {
+      "hosting": {
+        "la-casa-di-giusy": [
+          "lacasadigiusy"
+        ]
+      }
+    }
+  }
+}
