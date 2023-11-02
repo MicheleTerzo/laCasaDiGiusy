@@ -34,3 +34,121 @@ main {
   width : 100px;
 }
 
+.scroll-top-button {
+  left     : 80%;
+  position : fixed;
+  top      : 90%;
+  z-index  : 999;
+}
+
+section {
+  padding-top : calc(var(--header-height) - .5rem);
+}
+
+nav {
+  height : 100%
+}
+
+header {
+  height   : var(--header-height);
+  padding  : 0;
+  position : fixed;
+  top      : 0;
+  width    : 100%;
+  z-index  : 999;
+}
+
+footer {
+  background : var(--secondary-bg-color);
+  color      : #FFF;
+  height     : var(--footer-height);
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width : 0px) and (max-width : 767.98px) {
+  section {
+    padding-left  : 1rem;
+    padding-right : 1rem;
+    padding-top   : calc(var(--header-height) - .5rem);
+  }
+  nav {
+    padding-left  : 1rem;
+    padding-right : 1rem;
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width : 768px) and (max-width : 991.98px) {
+  section {
+    padding-left  : 2rem;
+    padding-right : 2rem;
+    padding-top   : calc(var(--header-height) - .5rem);
+  }
+  nav {
+    padding-left  : 2rem;
+    padding-right : 2rem;
+  }
+  .scroll-top-button {
+    left     : 90%;
+    position : fixed;
+    top      : 90%;
+    z-index  : 999;
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width : 992px) and (max-width : 1199.98px) {
+  section {
+    padding-left  : 3rem;
+    padding-right : 3rem;
+    padding-top   : calc(var(--header-height) + 1rem);
+  }
+  nav {
+    padding-left  : 3rem;
+    padding-right : 3rem;
+  }
+  .scroll-top-button {
+    left     : 90%;
+    position : fixed;
+    top      : 90%;
+    z-index  : 999;
+  }
+}
+
+// X-Large devices (large desktops, 1200px and up)
+@media (min-width : 1200px) and (max-width : 1399.98px) {
+  section {
+    padding-left  : 10rem;
+    padding-right : 10rem;
+    padding-top   : calc(var(--header-height) + 1rem);
+  }
+  nav {
+    padding-left  : 10rem;
+    padding-right : 10rem;
+  }
+  .scroll-top-button {
+    left     : 90%;
+    position : fixed;
+    top      : 90%;
+    z-index  : 999;
+  }
+}
+
+// XX-Large devices (larger desktops, 1400px and up)
+@media (min-width : 1400px) {
+  section {
+    padding-left  : 15rem;
+    padding-right : 15rem;
+    padding-top   : calc(var(--header-height) + 1rem);
+  }
+  nav {
+    padding-left  : 15rem;
+    padding-right : 15rem;
+  }
+  .scroll-top-button {
+    left     : 95%;
+    position : fixed;
+    top      : 90%;
+    z-index  : 999;
+  }
+}

@@ -93,13 +93,6 @@
   transition : background-color 300ms ease-in-out;
 }
 
-.scroll-top-button {
-  left     : 80%;
-  position : fixed;
-  top      : 90%;
-  z-index  : 999;
-}
-
 .custom-hover {
   &:hover {
     border-bottom  : 3px solid var(--custom-primary);
