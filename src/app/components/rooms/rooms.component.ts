@@ -3,6 +3,7 @@ import {NgForOf} from '@angular/common';
 import {PerkBoxComponent} from '../perk-box/perk-box.component';
 import {PerkBoxInterface} from '../../interfaces/perk-box.interface';
 import {GalleriaModule} from 'primeng/galleria';
+import {TranslateModule} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-rooms',
@@ -10,7 +11,8 @@ import {GalleriaModule} from 'primeng/galleria';
   imports: [
     NgForOf,
     PerkBoxComponent,
-    GalleriaModule
+    GalleriaModule,
+    TranslateModule
   ],
   templateUrl: './rooms.component.html',
   styleUrls: ['./rooms.component.scss']

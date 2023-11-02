@@ -6,3 +6,8 @@ export enum SECTIONS {
   MAPS = 4,
   BOOK = 5
 }
+
+export enum LANGUAGES {
+  IT = 'it',
+  EN = 'en'
+}

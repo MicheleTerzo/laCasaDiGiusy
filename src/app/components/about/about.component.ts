@@ -13,19 +13,19 @@ import {PerkBoxInterface} from '../../interfaces/perk-box.interface';
 export class AboutComponent {
   protected aboutPerks: PerkBoxInterface[] = [
     {
-      title: 'PARCHEGGIO PRIVATO',
-      description: 'Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam.',
+      title: 'Parking',
+      description: 'Parking description',
       iconClass: 'fa-solid fa-square-parking'
     },
     {
-      title: 'PET FRIENDLY',
-      description: 'Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam.',
-      iconClass: 'fa-solid fa-dog'
+      title: 'Well connected',
+      description: 'Well connected description',
+      iconClass: 'fa-solid fa-bus'
     },
     {
-      title: 'ACCESSIBILE',
-      description: 'Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam.',
-      iconClass: 'fa-brands fa-accessible-icon'
+      title: 'Breakfast included',
+      description: 'Breakfast description',
+      iconClass: 'fa-solid fa-mug-saucer'
     }
   ];
 }

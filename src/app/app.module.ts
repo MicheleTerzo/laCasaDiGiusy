@@ -13,12 +13,30 @@ import {ButtonModule} from 'primeng/button';
 import {SharedModule} from 'primeng/api';
 import {SidebarModule} from 'primeng/sidebar';
 import {ScrollTopModule} from 'primeng/scrolltop';
+import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
+import {HttpBackend, HttpClientModule} from '@angular/common/http';
+import {LANGUAGES} from './utils/enums';
+import {MultiTranslateHttpLoader} from 'ngx-translate-multi-http-loader';
+
+function HttpLoaderFactory(http: HttpBackend): MultiTranslateHttpLoader {
+  return new MultiTranslateHttpLoader(http, [
+    {prefix: './assets/i18n/', suffix: '.json'}
+  ]);
+}
 
 @NgModule({
   declarations: [
     AppComponent
   ],
   imports: [
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpBackend]
+      },
+      defaultLanguage: LANGUAGES.IT
+    }),
     BrowserModule,
     BrowserAnimationsModule,
     RouterOutlet,
@@ -31,7 +49,8 @@ import {ScrollTopModule} from 'primeng/scrolltop';
     ButtonModule,
     SharedModule,
     SidebarModule,
-    ScrollTopModule
+    ScrollTopModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
