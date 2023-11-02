@@ -4,6 +4,7 @@ import {BOOKING_URL} from './config';
 import {TranslateService} from '@ngx-translate/core';
 import {FormControl} from '@angular/forms';
 import {takeUntilDestroyed} from '@angular/core/rxjs-interop';
+import {ScreenDetectorService} from './services/screen-detector.service';
 
 @Component({
   selector: 'app-root',
@@ -20,6 +21,7 @@ export class AppComponent implements AfterViewInit {
   languageControl: FormControl<LANGUAGES>;
   isWindowAtTop = true;
   languageOptions: { label: string, value: LANGUAGES }[] = [];
+  isMobile = false;
   protected showMobileMenu = false;
   protected navigationItems = [
     {
@@ -54,6 +56,7 @@ export class AppComponent implements AfterViewInit {
     }
   ];
   private readonly _translateService = inject(TranslateService);
+  private readonly _screenService = inject(ScreenDetectorService);
 
   constructor() {
     this._translateService.setDefaultLang(LANGUAGES.IT);
@@ -61,6 +64,7 @@ export class AppComponent implements AfterViewInit {
     this.buildLanguagesOptions();
     this.languageControl = new FormControl<LANGUAGES>(LANGUAGES.IT, {nonNullable: true});
     this.initLanguageSubscription();
+    this.isMobile = window.innerWidth < 750;
   }
 
   ngAfterViewInit(): void {
@@ -69,11 +73,9 @@ export class AppComponent implements AfterViewInit {
       const targetScrollTop = event?.target.scrollTop;
       this.isWindowAtTop = targetScrollTop <= 50;
     }, true);
-  }
-
-  changeLanguage(selectedLang: LANGUAGES) {
-    console.log(selectedLang);
-    this._translateService.use(selectedLang);
+    window.addEventListener('resize', () => {
+      this.isMobile = window.innerWidth < 750;
+    });
   }
 
   protected onCloseMenu(): void {

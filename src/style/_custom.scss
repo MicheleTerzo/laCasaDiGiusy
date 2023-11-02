@@ -83,11 +83,13 @@
 
 .invisible-header {
   background : transparent;
+  color      : var(--custom-text-color);
   transition : background-color 300ms ease-in-out;
 }
 
 .visible-header {
   background : var(--header-bg-color);
+  color      : var(--secondary-bg-color);
   transition : background-color 300ms ease-in-out;
 }
 
@@ -96,4 +98,13 @@
   position : fixed;
   top      : 90%;
   z-index  : 999;
+}
+
+.custom-hover {
+  &:hover {
+    border-bottom  : 3px solid var(--custom-primary);
+    font-weight    : bold;
+    padding-bottom : .5rem;
+    transition     : 300ms all ease-in-out;
+  }
 }

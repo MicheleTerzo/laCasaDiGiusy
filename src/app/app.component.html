@@ -1,19 +1,27 @@
 <header [ngClass]="{'invisible-header': isWindowAtTop, 'visible-header':!isWindowAtTop}">
   <div class="grid h-full">
-    <div class="col-6 flex align-items-center pl-3 pb-0">
+    <div class="col-6 md:col-2 flex align-items-center pl-3 pb-0">
       <img alt=""
            class="logo"
            src="assets/img/logo.png">
     </div>
-    <div class="col-6 pr-3 pb-0 flex justify-content-end align-items-center">
+    <div class="col-6 md:col-10 pr-3 pb-0 flex justify-content-end align-items-center">
       <p-button (click)="showSidebar()"
+                *ngIf="isMobile"
                 icon="fa-solid fa-bars"
                 styleClass="text-2xl p-button-rounded p-button-text custom-color"/>
+      <ng-container *ngIf="!isMobile">
+        <div *ngFor="let item of navigationItems"
+             class="mx-3 cursor-pointer text-lg custom-hover">
+          <span [class]="item.styleClass">{{item.label | translate | uppercase}}</span>
+        </div>
+      </ng-container>
     </div>
   </div>
 </header>
 <main>
-  <p-sidebar [(visible)]="showMobileMenu"
+  <p-sidebar *ngIf="isMobile"
+             [(visible)]="showMobileMenu"
              [showCloseIcon]="false"
              position="right">
     <ng-template pTemplate="header">
@@ -43,17 +51,17 @@
                    [languageOptions]="languageOptions"/>
   </section>
   <section #aboutSection
-           class="px-3 pb-8"
+           class="px-3 md:px-8 pb-8"
            id="about">
     <app-about/>
   </section>
   <section #roomsSection
-           class="px-3 pb-8"
+           class="px-3 md:px-8 pb-8"
            id="rooms">
     <app-rooms/>
   </section>
   <section #gallerySection
-           class="px-3 pb-8 h-50rem"
+           class="px-3 md:px-8 pb-8 h-50rem"
            id="gallery">
     <app-gallery/>
   </section>
@@ -63,7 +71,7 @@
     <app-maps/>
   </section>
   <section #contactsSection
-           class="px-3 pb-8"
+           class="px-3 md:px-8 pb-8"
            id="contacts">
     <app-contacts/>
   </section>
