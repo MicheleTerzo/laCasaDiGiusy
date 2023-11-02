@@ -29,10 +29,11 @@
   </div>
 </div>
 <div class="custom-divider mt-5 mb-5"></div>
-<div class="bonus-box mt-4 mb-4 flex flex-column justify-content-center align-items-center">
-  <ng-container *ngFor="let perk of aboutPerks">
+<div class="grid ">
+  <div *ngFor="let perk of aboutPerks"
+       class="flex flex-column justify-content-center align-items-center col-12 md:col-6 lg:col-4 flex-grow-1">
     <app-perk-box [description]="perk.description"
                   [iconClass]="perk.iconClass"
                   [title]="perk.title"/>
-  </ng-container>
+  </div>
 </div>
