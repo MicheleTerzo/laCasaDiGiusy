@@ -4,6 +4,8 @@ import {PerkBoxComponent} from '../perk-box/perk-box.component';
 import {PerkBoxInterface} from '../../interfaces/perk-box.interface';
 import {GalleriaModule} from 'primeng/galleria';
 import {TranslateModule} from '@ngx-translate/core';
+import {ButtonModule} from 'primeng/button';
+import {BOOKING_URL} from '../../config';
 
 @Component({
   selector: 'app-rooms',
@@ -12,7 +14,8 @@ import {TranslateModule} from '@ngx-translate/core';
     NgForOf,
     PerkBoxComponent,
     GalleriaModule,
-    TranslateModule
+    TranslateModule,
+    ButtonModule
   ],
   templateUrl: './rooms.component.html',
   styleUrls: ['./rooms.component.scss']
@@ -20,19 +23,23 @@ import {TranslateModule} from '@ngx-translate/core';
 export class RoomsComponent {
   protected facilitiesPerk: PerkBoxInterface[] = [
     {
-      title: 'WIFI',
-      description: 'Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam.',
+      title: 'Wifi',
+      description: 'Wifi description',
       iconClass: 'fa-solid fa-wifi'
     },
     {
-      title: 'ARIA CONDIZIONATA',
-      description: 'Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam.',
+      title: 'Air conditioning',
+      description: 'Air conditioning description',
       iconClass: 'fa-solid fa-fan'
     },
     {
-      title: 'INGRESSO ELETTRONICO',
-      description: 'Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam.',
+      title: 'Electronic entrance',
+      description: 'Electronic entrance description',
       iconClass: 'fa-solid fa-id-card'
     }
   ];
+
+  protected goToBooking() {
+    window.open(BOOKING_URL, '_blank');
+  }
 }

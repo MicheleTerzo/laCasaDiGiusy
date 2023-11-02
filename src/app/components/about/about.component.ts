@@ -1,12 +1,13 @@
 import {Component} from '@angular/core';
 import {PerkBoxComponent} from '../perk-box/perk-box.component';
-import {NgForOf} from '@angular/common';
+import {NgForOf, UpperCasePipe} from '@angular/common';
 import {PerkBoxInterface} from '../../interfaces/perk-box.interface';
+import {TranslateModule} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-about',
   standalone: true,
-  imports: [PerkBoxComponent, NgForOf],
+  imports: [PerkBoxComponent, NgForOf, TranslateModule, UpperCasePipe],
   templateUrl: './about.component.html',
   styleUrls: ['./about.component.scss']
 })

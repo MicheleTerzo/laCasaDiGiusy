@@ -3,6 +3,7 @@ import {NgForOf} from '@angular/common';
 import {PerkBoxComponent} from '../perk-box/perk-box.component';
 import {GalleriaModule} from 'primeng/galleria';
 import {ButtonModule} from 'primeng/button';
+import {TranslateModule} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-gallery',
@@ -12,7 +13,8 @@ import {ButtonModule} from 'primeng/button';
     NgForOf,
     PerkBoxComponent,
     GalleriaModule,
-    ButtonModule
+    ButtonModule,
+    TranslateModule
   ],
   templateUrl: './gallery.component.html'
 })

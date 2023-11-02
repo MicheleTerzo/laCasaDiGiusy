@@ -1,46 +1,18 @@
-<h1 class="mt-0 mb-5 text-5xl text-white">Le Camere</h1>
+<h1 class="mt-0 mb-5 text-5xl custom-text-color text-center">{{'Rooms' | translate}}</h1>
 <div class="grid">
-  <!--<div class="col-12 md:col-6 lg:col-4 mb-8">
-    <div class="room ">
-      <div class="image-container">
-        <img alt="room image"
-             src="assets/img/ROOM-1_1.jpg">
-      </div>
-      <div class="description p-3">
-        <h1>{{'Double room' | translate}}</h1>
-        <p>Beautiful design with modern furnishings including a glamorous bay window with your own private view of
-           Lucerne.</p>
-        <div class="flex flex-column mt-5">
-          <div class="flex align-items-center mb-3">
-            <i class="fa-solid fa-tv text-3xl custom-color mr-2"></i>
-            <span>32" Tv</span>
-          </div>
-          <div class="flex align-items-center">
-            <i class="fa-solid fa-tv text-3xl custom-color mr-2"></i>
-            <span>32" Tv</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>-->
   <div class="col-12 md:col-6 lg:col-4 mb-8">
     <div class="room">
       <div class="image-container">
         <img alt="room image"
              src="assets/img/ROOM-1_1.jpg">
       </div>
-      <div class="description p-3">
+      <div class="description p-3 background-primary">
         <h1>Venere</h1>
         <p>{{'Venere room description' | translate}}</p>
-        <div class="flex flex-column mt-5">
-          <div class="flex align-items-center mb-3">
-            <i class="fa-solid fa-tv text-3xl custom-color mr-2"></i>
-            <span>32" Tv</span>
-          </div>
-          <div class="flex align-items-center">
-            <i class="fa-solid fa-tv text-3xl custom-color mr-2"></i>
-            <span>32" Tv</span>
-          </div>
+        <div class="mt-5 flex justify-content-end">
+          <p-button (onClick)="goToBooking()"
+                    [label]="'Book now' | translate"
+                    styleClass="p-button-sm p-button-text custom-text-button"/>
         </div>
       </div>
     </div>
@@ -51,18 +23,13 @@
         <img alt="room image"
              src="assets/img/ROOM-1_1.jpg">
       </div>
-      <div class="description p-3">
+      <div class="description p-3 background-primary">
         <h1>Diana</h1>
         <p>{{'Diana room description' | translate}}</p>
-        <div class="flex flex-column mt-5 mt-5">
-          <div class="flex align-items-center mb-3">
-            <i class="fa-solid fa-tv text-3xl custom-color mr-2"></i>
-            <span>32" Tv</span>
-          </div>
-          <div class="flex align-items-center">
-            <i class="fa-solid fa-tv text-3xl custom-color mr-2"></i>
-            <span>32" Tv</span>
-          </div>
+        <div class="mt-5 flex justify-content-end">
+          <p-button (onClick)="goToBooking()"
+                    [label]="'Book now' | translate"
+                    styleClass="p-button-sm p-button-text custom-text-button"/>
         </div>
       </div>
     </div>
@@ -71,7 +38,7 @@
 <div class="custom-divider-inverted mt-5 mb-5"></div>
 <div class="grid">
   <div class="col-12">
-    <h1 class="mt-0 mb-5 text-5xl text-white text-center">Bonus principali</h1>
+    <h1 class="mt-0 mb-5 text-5xl custom-text-color text-center">Bonus principali</h1>
   </div>
   <ng-container *ngFor="let perk of facilitiesPerk">
     <div class="col-12 md:col-6 lg:col-4">

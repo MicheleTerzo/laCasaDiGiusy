@@ -33,12 +33,13 @@
            class="col-12 mb-2 mt-2 flex justify-content-start align-items-center">
         <h4 (click)="navigateToSection(item.sectionName)"
             [class]="item.styleClass"
-            class="m-0 p-0 cursor-pointer">{{item.label | uppercase}}</h4>
+            class="m-0 p-0 cursor-pointer">{{item.label | translate | uppercase}}</h4>
       </div>
     </div>
   </p-sidebar>
-  <section #jumbotronSection id="jumbotron">
-    <app-jumbotron/>
+  <section #jumbotronSection
+           id="jumbotron">
+    <app-jumbotron (changeLanguage)="changeLanguage($event)"/>
   </section>
   <section #aboutSection
            class="px-3 pb-8"
@@ -54,6 +55,10 @@
            class="px-3 pb-8 h-50rem"
            id="gallery">
     <app-gallery/>
+  </section>
+  <section #mapSection
+           id="maps">
+    <app-maps/>
   </section>
   <section #contactsSection
            class="px-3 pb-8"

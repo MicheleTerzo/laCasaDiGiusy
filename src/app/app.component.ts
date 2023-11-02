@@ -1,6 +1,7 @@
-import {AfterViewInit, Component, ElementRef, ViewChild} from '@angular/core';
-import {SECTIONS} from './utils/enums';
+import {AfterViewInit, Component, ElementRef, inject, ViewChild} from '@angular/core';
+import {LANGUAGES, SECTIONS} from './utils/enums';
 import {BOOKING_URL} from './config';
+import {TranslateService} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-root',
@@ -17,31 +18,42 @@ export class AppComponent implements AfterViewInit {
   protected showMobileMenu = false;
   protected menuItems = [
     {
-      label: 'Chi siamo',
+      label: 'About',
       sectionName: SECTIONS.ABOUT,
       styleClass: ''
     },
     {
-      label: 'Camere',
+      label: 'Rooms',
       sectionName: SECTIONS.ROOMS,
       styleClass: ''
     },
     {
-      label: 'Galleria',
+      label: 'Gallery',
       sectionName: SECTIONS.GALLERY,
       styleClass: ''
     },
     {
-      label: 'Contatti',
+      label: 'Location',
+      sectionName: SECTIONS.MAPS,
+      styleClass: ''
+    },
+    {
+      label: 'Contacts',
       sectionName: SECTIONS.CONTACTS,
       styleClass: ''
     },
     {
-      label: 'Prenota',
+      label: 'Book now',
       sectionName: SECTIONS.BOOK,
       styleClass: 'custom-color'
     }
   ];
+  private readonly _translateService = inject(TranslateService);
+
+  constructor() {
+    this._translateService.setDefaultLang(LANGUAGES.IT);
+    this._translateService.use(LANGUAGES.IT);
+  }
 
   ngAfterViewInit(): void {
     window.addEventListener('scroll', (event) => {
@@ -49,6 +61,11 @@ export class AppComponent implements AfterViewInit {
       const targetScrollTop = event?.target.scrollTop;
       this.isWindowAtTop = targetScrollTop <= 50;
     }, true);
+  }
+
+  changeLanguage(selectedLang: LANGUAGES) {
+    console.log(selectedLang);
+    this._translateService.use(selectedLang);
   }
 
   protected onCloseMenu(): void {

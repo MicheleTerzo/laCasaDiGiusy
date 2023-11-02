@@ -9,5 +9,8 @@ export enum SECTIONS {
 
 export enum LANGUAGES {
   IT = 'it',
-  EN = 'en'
+  EN = 'en',
+  DE = 'de',
+  ES = 'es',
+  FR = 'fr'
 }

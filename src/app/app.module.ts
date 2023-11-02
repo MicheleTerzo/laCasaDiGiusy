@@ -17,6 +17,7 @@ import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {HttpBackend, HttpClientModule} from '@angular/common/http';
 import {LANGUAGES} from './utils/enums';
 import {MultiTranslateHttpLoader} from 'ngx-translate-multi-http-loader';
+import {MapsComponent} from './components/maps/maps.component';
 
 function HttpLoaderFactory(http: HttpBackend): MultiTranslateHttpLoader {
   return new MultiTranslateHttpLoader(http, [
@@ -50,7 +51,8 @@ function HttpLoaderFactory(http: HttpBackend): MultiTranslateHttpLoader {
     SharedModule,
     SidebarModule,
     ScrollTopModule,
-    HttpClientModule
+    HttpClientModule,
+    MapsComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

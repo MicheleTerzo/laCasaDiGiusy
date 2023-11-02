@@ -10,6 +10,16 @@
   border     : 1px solid var(--custom-primary);
 }
 
+.p-button.p-button-text.custom-text-button {
+  color : var(--custom-primary);
+
+  &:focus {
+    -moz-box-shadow    : none;
+    -webkit-box-shadow : none;
+    box-shadow         : none;
+  }
+}
+
 .p-splitbutton.p-button-outlined > .p-button {
   color : var(--custom-primary);
 
@@ -46,6 +56,14 @@
 .custom-divider {
   background : var(--custom-primary);
   height     : 1px;
+}
+
+.background-primary {
+  background : var(--primary-bg-color)
+}
+
+.custom-text-color {
+  color : var(--custom-text-color);
 }
 
 .custom-divider-inverted {

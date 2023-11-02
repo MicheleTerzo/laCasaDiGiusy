@@ -8,17 +8,25 @@
   //margin-top            : -8rem;
 }
 
+app-maps {
+  padding : 0;
+}
+
 #rooms {
   background : var(--secondary-bg-color);
 }
 
-#contacts {
+#maps {
   background : var(--secondary-bg-color);
-  color      : #FFF;
+}
+
+#contacts {
+  //background : var(--secondary-bg-color);
+  //color      : #FFF;
 }
 
 section {
-  padding-top : calc(var(--header-height) + 1rem);
+  padding-top : calc(var(--header-height) + .5rem);
 }
 
 header {
@@ -31,6 +39,7 @@ header {
 }
 
 footer {
-  background : var(--primary-bg-color);
+  background : var(--secondary-bg-color);
+  color      : #FFF;
   height     : var(--footer-height);
 }
