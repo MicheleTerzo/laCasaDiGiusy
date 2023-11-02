@@ -64,7 +64,7 @@ export class AppComponent implements AfterViewInit {
     this.buildLanguagesOptions();
     this.languageControl = new FormControl<LANGUAGES>(LANGUAGES.IT, {nonNullable: true});
     this.initLanguageSubscription();
-    this.isMobile = window.innerWidth < 750;
+    this.isMobile = window.innerWidth < 768;
   }
 
   ngAfterViewInit(): void {
@@ -74,7 +74,7 @@ export class AppComponent implements AfterViewInit {
       this.isWindowAtTop = targetScrollTop <= 50;
     }, true);
     window.addEventListener('resize', () => {
-      this.isMobile = window.innerWidth < 750;
+      this.isMobile = window.innerWidth < 768;
     });
   }
 
