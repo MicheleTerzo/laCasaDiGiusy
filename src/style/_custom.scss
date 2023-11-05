@@ -94,11 +94,45 @@
 }
 
 .custom-hover {
+  -webkit-background-clip : text;
+  background-image        : linear-gradient(
+      to right,
+      var(--custom-primary),
+      var(--custom-primary) 50%,
+      #fff 50%);
+  background-position     : -100%;
+  background-size         : 200% 100%;
+  display                 : block;
+  font-size               : 26px;
+  font-weight             : bold;
+  line-height             : 1;
+  padding                 : 5px 0;
+  position                : relative;
+  text-align              : center;
+  text-decoration         : none;
+  -webkit-text-fill-color : transparent;
+  transition              : all 0.3s ease-in-out;
+  z-index                 : 1;
+
+  &:before {
+    background : var(--custom-primary);
+    bottom     : -3px;
+    content    : '';
+    display    : block;
+    height     : 3px;
+    left       : 0;
+    position   : absolute;
+    transition : all 0.3s ease-in-out;
+    width      : 0;
+    z-index    : 0;
+  }
+
   &:hover {
-    border-bottom  : 3px solid var(--custom-primary);
-    font-weight    : bold;
-    padding-bottom : .5rem;
-    transition     : 300ms all ease-in-out;
+    background-position : 0;
+
+    &:before {
+      width : 100%;
+    }
   }
 }
 
