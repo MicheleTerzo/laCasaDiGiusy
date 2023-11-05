@@ -40,10 +40,6 @@
   }
 }
 
-.h-50rem {
-  height : 50rem;
-}
-
 .custom-color {
   color : var(--custom-primary)
 }
@@ -89,8 +85,16 @@
 
 .visible-header {
   background : var(--header-bg-color);
-  color      : var(--secondary-bg-color);
+  //color      : var(--secondary-bg-color);
   transition : background-color 300ms ease-in-out;
+
+  .custom-hover {
+    background-image : linear-gradient(
+        to right,
+        var(--custom-primary),
+        var(--custom-primary) 50%,
+        var(--secondary-bg-color) 50%);
+  }
 }
 
 .custom-hover {
@@ -99,7 +103,7 @@
       to right,
       var(--custom-primary),
       var(--custom-primary) 50%,
-      #fff 50%);
+      var(--custom-text-color) 50%);
   background-position     : -100%;
   background-size         : 200% 100%;
   display                 : block;
@@ -111,7 +115,7 @@
   text-align              : center;
   text-decoration         : none;
   -webkit-text-fill-color : transparent;
-  transition              : all 0.3s ease-in-out;
+  transition              : all 300ms ease-in-out;
   z-index                 : 1;
 
   &:before {
