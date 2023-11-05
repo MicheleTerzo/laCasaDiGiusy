@@ -3,11 +3,12 @@ import {PerkBoxComponent} from '../perk-box/perk-box.component';
 import {NgForOf, UpperCasePipe} from '@angular/common';
 import {PerkBoxInterface} from '../../interfaces/perk-box.interface';
 import {TranslateModule} from '@ngx-translate/core';
+import {ObserveVisibilityDirective} from '../../utils/intersection-observer.directive';
 
 @Component({
   selector: 'app-about',
   standalone: true,
-  imports: [PerkBoxComponent, NgForOf, TranslateModule, UpperCasePipe],
+  imports: [PerkBoxComponent, NgForOf, TranslateModule, UpperCasePipe, ObserveVisibilityDirective],
   templateUrl: './about.component.html',
   styleUrls: ['./about.component.scss']
 })

@@ -4,6 +4,7 @@ import {PerkBoxComponent} from '../perk-box/perk-box.component';
 import {GalleriaModule} from 'primeng/galleria';
 import {ButtonModule} from 'primeng/button';
 import {TranslateModule} from '@ngx-translate/core';
+import {ObserveVisibilityDirective} from '../../utils/intersection-observer.directive';
 
 @Component({
   selector: 'app-gallery',
@@ -14,7 +15,8 @@ import {TranslateModule} from '@ngx-translate/core';
     PerkBoxComponent,
     GalleriaModule,
     ButtonModule,
-    TranslateModule
+    TranslateModule,
+    ObserveVisibilityDirective
   ],
   templateUrl: './gallery.component.html'
 })
