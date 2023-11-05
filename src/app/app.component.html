@@ -17,6 +17,29 @@
                class="mx-3 cursor-pointer text-lg nav-text-hover">
             <span [class]="item.styleClass">{{item.label | translate | uppercase}}</span>
           </div>
+          <div class="mx-3">
+            <p-dropdown [formControl]="languageControl"
+                        [options]="languageOptions"
+                        optionLabel="label"
+                        styleClass="custom-dropdown">
+              <ng-template pTemplate="selectedItem">
+                <div *ngIf="languageControl as control"
+                     class="flex align-items-center gap-2">
+                  <img [src]="'assets/img/flag-icon/' + control.value.value.toLowerCase() + '.png'"
+                       alt=""
+                       style="width: 25px"/>
+                </div>
+              </ng-template>
+              <ng-template let-country
+                           pTemplate="item">
+                <div class="flex align-items-center gap-2">
+                  <img [src]="'assets/img/flag-icon/' + country.value.toLowerCase()+ '.png'"
+                       alt=""
+                       style="width: 25px"/>
+                </div>
+              </ng-template>
+            </p-dropdown>
+          </div>
         </ng-container>
       </div>
     </div>
@@ -29,7 +52,30 @@
              position="right">
     <ng-template pTemplate="header">
       <div class="grid w-full">
-        <div class="col-12 flex justify-content-end">
+        <div class="col-12 flex justify-content-between align-items-center">
+          <p-dropdown [formControl]="languageControl"
+                      [options]="languageOptions"
+                      optionLabel="label"
+                      styleClass="custom-dropdown">
+            <ng-template pTemplate="selectedItem">
+              <div *ngIf="languageControl as control"
+                   class="flex align-items-center gap-2">
+                <img [src]="'assets/img/flag-icon/' + control.value.value.toLowerCase() + '.png'"
+                     alt=""
+                     style="width: 25px"/>
+                <!--              {{control.value.label}}-->
+              </div>
+            </ng-template>
+            <ng-template let-country
+                         pTemplate="item">
+              <div class="flex align-items-center gap-2">
+                <img [src]="'assets/img/flag-icon/' + country.value.toLowerCase()+ '.png'"
+                     alt=""
+                     style="width: 25px"/>
+                <!--              {{country.label}}-->
+              </div>
+            </ng-template>
+          </p-dropdown>
           <p-button (click)="onCloseMenu()"
                     icon="fa-solid fa-times"
                     styleClass="text-2xl p-button-rounded p-button-text custom-color"/>
@@ -50,8 +96,7 @@
   </p-sidebar>
   <section #jumbotronSection
            id="jumbotron">
-    <app-jumbotron [languageControl]="languageControl"
-                   [languageOptions]="languageOptions"/>
+    <app-jumbotron/>
   </section>
   <section #aboutSection
            class="pb-8"

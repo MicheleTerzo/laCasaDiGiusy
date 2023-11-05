@@ -4,7 +4,6 @@ import {BOOKING_URL} from './config';
 import {TranslateService} from '@ngx-translate/core';
 import {FormControl} from '@angular/forms';
 import {takeUntilDestroyed} from '@angular/core/rxjs-interop';
-import {ScreenDetectorService} from './services/screen-detector.service';
 
 @Component({
   selector: 'app-root',
@@ -18,7 +17,7 @@ export class AppComponent implements AfterViewInit {
   @ViewChild('contactsSection') contactsSection?: ElementRef;
   @ViewChild('jumbotronSection') jumbotronSection?: ElementRef;
   @ViewChild('mapSection') mapsSection?: ElementRef;
-  languageControl: FormControl<LANGUAGES>;
+  languageControl: FormControl<{ label: string, value: LANGUAGES }>;
   isWindowAtTop = true;
   languageOptions: { label: string, value: LANGUAGES }[] = [];
   isMobile = false;
@@ -56,13 +55,15 @@ export class AppComponent implements AfterViewInit {
     }
   ];
   private readonly _translateService = inject(TranslateService);
-  private readonly _screenService = inject(ScreenDetectorService);
 
   constructor() {
     this._translateService.setDefaultLang(LANGUAGES.IT);
     this._translateService.use(LANGUAGES.IT);
     this.buildLanguagesOptions();
-    this.languageControl = new FormControl<LANGUAGES>(LANGUAGES.IT, {nonNullable: true});
+    this.languageControl = new FormControl<{
+      label: string,
+      value: LANGUAGES
+    }>(this.languageOptions[0], {nonNullable: true});
     this.initLanguageSubscription();
     this.isMobile = window.innerWidth < 768;
   }
@@ -70,8 +71,11 @@ export class AppComponent implements AfterViewInit {
   ngAfterViewInit(): void {
     window.addEventListener('scroll', (event) => {
       // @ts-ignore
-      const targetScrollTop = event?.target.scrollTop;
-      this.isWindowAtTop = targetScrollTop <= 50;
+      if (event.target.localName === 'body') {
+        // @ts-ignore
+        const targetScrollTop = event?.target.scrollTop;
+        this.isWindowAtTop = targetScrollTop <= 50;
+      }
     }, true);
     window.addEventListener('resize', () => {
       this.isMobile = window.innerWidth < 768;
@@ -122,17 +126,17 @@ export class AppComponent implements AfterViewInit {
 
   private buildLanguagesOptions(): void {
     this.languageOptions = [
+      {label: 'Italiano', value: LANGUAGES.IT},
       {label: 'English', value: LANGUAGES.EN},
       {label: 'Detusch', value: LANGUAGES.DE},
       {label: 'Francois', value: LANGUAGES.FR},
-      {label: 'Espanol', value: LANGUAGES.ES},
-      {label: 'Italiano', value: LANGUAGES.IT}
+      {label: 'Espanol', value: LANGUAGES.ES}
     ];
   }
 
   private initLanguageSubscription() {
     this.languageControl.valueChanges.pipe(takeUntilDestroyed()).subscribe((value) => {
-      this._translateService.use(value);
+      this._translateService.use(value.value);
     });
   }
 }
