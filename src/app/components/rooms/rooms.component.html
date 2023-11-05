@@ -42,10 +42,12 @@
     </div>
   </div>
 </div>
-<div class="custom-divider-inverted mt-5 mb-5"></div>
+<div class="custom-divider-inverted mt-5 mb-5 item-invisible"
+     observeVisibility></div>
 <div class="grid">
   <div class="col-12">
-    <h1 class="mt-0 mb-5 text-5xl custom-text-color text-center">{{'Main bonuses' | translate}}</h1>
+    <h1 class="mt-0 mb-5 text-5xl custom-text-color text-center item-invisible"
+        observeVisibility>{{'Main bonuses' | translate}}</h1>
   </div>
   <ng-container *ngFor="let perk of facilitiesPerk">
     <div class="col-12 md:col-6 lg:col-4 item-invisible"
