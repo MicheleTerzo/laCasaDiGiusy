@@ -14,7 +14,7 @@
         <ng-container *ngIf="!isMobile">
           <div (click)="navigateToSection(item.sectionName)"
                *ngFor="let item of navigationItems"
-               class="mx-3 cursor-pointer text-lg custom-hover">
+               class="mx-3 cursor-pointer text-lg nav-text-hover">
             <span [class]="item.styleClass">{{item.label | translate | uppercase}}</span>
           </div>
         </ng-container>
