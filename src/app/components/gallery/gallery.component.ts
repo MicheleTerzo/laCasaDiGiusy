@@ -34,6 +34,13 @@ export class GalleryComponent {
     'assets/img/ROOM-1_5.jpg',
     'assets/img/ROOM-1_6.jpg',
     'assets/img/ROOM-1_7.jpg',
-    'assets/img/ROOM-1_8.jpg'
+    'assets/img/ROOM-1_8.jpg',
+    'assets/img/ROOM-1_9.jpg',
+    'assets/img/ROOM-1_10.jpg',
+    'assets/img/ROOM-2_1.jpg',
+    'assets/img/ROOM-2_2.jpg',
+    'assets/img/ROOM-2_3.jpg',
+    'assets/img/ROOM-2_4.jpg',
+    'assets/img/ROOM-2_5.jpg'
   ];
 }
