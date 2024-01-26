@@ -31,9 +31,9 @@
   </div>
 </div>
 <div class="custom-divider mt-5 mb-5"></div>
-<div class="grid ">
+<div class="grid">
   <div *ngFor="let perk of aboutPerks"
-       class="flex flex-column justify-content-center align-items-center col-12 md:col-6 lg:col-4 flex-grow-1 item-invisible"
+       class="col-12 md:col-6 lg:col-4 item-invisible"
        observeVisibility>
     <app-perk-box [description]="perk.description"
                   [iconClass]="perk.iconClass"
