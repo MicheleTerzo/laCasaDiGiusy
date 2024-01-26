@@ -1,4 +1,7 @@
 {
+  "About subtitle": "Siéntete como en casa y vive una experiencia única",
+  "About description": "Nos complace ofrecerle una estancia cómoda y acogedora. Nuestra propiedad está ubicada en una posición estratégica, cerca de numerosos puntos de interés turístico y cultural. Nuestras habitaciones están decoradas con buen gusto y equipadas con todas las comodidades necesarias para garantizar una estancia agradable. Estamos a su disposición para cualquier información o solicitud. ¡Esperamos darle la bienvenida!",
+  "About signature": "Giacomo.... El propietario",
   "Venere room description": "La habitación está cómodamente y acogedoramente amueblada con una cama doble, un armario, un escritorio y una silla. Tiene un baño privado con ducha y está equipada con aire acondicionado y calefacción para garantizar el máximo confort en cualquier temporada.",
   "Diana room description": "Amueblada en un estilo sencillo pero elegante, la habitación tiene una cama doble y una individual, armario y escritorio. El baño es privado e incluye bañera y ducha.",
   "Parking": "ESTACIONAMIENTO",
@@ -18,7 +21,11 @@
   "Location": "\u200BDónde estamos",
   "Rooms": "\u200BLas habitaciones",
   "Gallery": "\u200BGalería",
-  "\u200BAcerca de nosotros": "About us",
-  "Shuttle service": "Shuttle service",
-  "Shuttle service description": "Servicio de transporte desde y hacia el aeropuerto"
+  "About": "Sobre nosotros",
+  "Shuttle service": "Servicio de transporte",
+  "Shuttle service description": "Servicio de transporte desde y hacia el aeropuerto",
+  "Language": "Idiomas",
+  "Main bonuses": "Principales primas",
+  "Reservations": "Reservas",
+  "Questions": "Preguntas"
 }
