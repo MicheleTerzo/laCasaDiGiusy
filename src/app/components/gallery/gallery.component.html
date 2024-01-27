@@ -1,12 +1,14 @@
 <h1 class="mt-0 mb-5 text-5xl text-center item-invisible" observeVisibility>{{'Gallery' | translate}}</h1>
 <div class="w-full flex justify-content-center align-items-center item-invisible" observeVisibility>
   <div class="grid h-40rem w-full">
-    <div class="col-1 h-full flex justify-content-center align-items-center" (click)="previousImage(imageTemplate)">
-      <i class="fa-solid fa-chevron-left text-5xl cursor-pointer"></i>
+    <div class="col-1 h-full flex justify-content-center align-items-center cursor-pointer"
+      (click)="previousImage(imageTemplate)">
+      <i class="fa-solid fa-chevron-left text-5xl custom-color"></i>
     </div>
     <div class="col-10 h-full image-container" #imageTemplate></div>
-    <div class="col-1 h-full flex justify-content-center align-items-center">
-      <i class="fa-solid fa-chevron-right text-5xl cursor-pointer" (click)="nextImage(imageTemplate)"></i>
+    <div class="col-1 h-full flex justify-content-center align-items-center cursor-pointer"
+      (click)="nextImage(imageTemplate)">
+      <i class="fa-solid fa-chevron-right text-5xl custom-color"></i>
     </div>
   </div>
 </div>

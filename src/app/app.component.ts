@@ -69,7 +69,6 @@ export class AppComponent implements AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-    this.navigateToSection(SECTIONS.GALLERY); //debug only
     window.addEventListener('scroll', (event) => {
       // @ts-ignore
       if (event.target.localName === 'body') {

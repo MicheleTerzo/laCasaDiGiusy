@@ -2,22 +2,8 @@
   <div class="p-3 start-container flex flex-column justify-content-center align-items-center">
     <h4 class="m-0 mb-3 custom-text-color font-italic">B&B EXPERIENCE</h4>
     <h1 class="hand-written-font custom-text-color text-5xl md:text-6xl m-0">La Casa di Giusy</h1>
-    <button (click)="navigateToBooking()"
-            class="book-now-button mt-3 p-3 custom-primary-button"
-            pButton>
+    <button (click)="navigateToBooking()" class="book-now-button mt-3 p-3 custom-primary-button" pButton>
       <span class="book-now-text">{{'Book now' | translate | uppercase}}</span>
-      <img alt="booking-logo"
-           class="booking-logo"
-           src="assets/img/booking-logo.png">
     </button>
   </div>
-  <!--<div class="end-container flex justify-content-end align-items-end p-5">
-    <p-dropdown [formControl]="languageControl"
-                [optionLabel]="'label'"
-                [optionValue]="'value'"
-                [options]="languageOptions"
-                [placeholder]="'Language' | translate"
-                appendTo="body"
-                styleClass="p-button-sm p-button-outlined"/>
-  </div>-->
 </div>
