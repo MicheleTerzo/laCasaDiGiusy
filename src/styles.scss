@@ -133,8 +133,7 @@ footer {
   }
 }
 
-// XX-Large devices (larger desktops, 1400px and up)
-@media (min-width : 1400px) {
+@media (min-width : 1400px) and (max-width : 1899.98px) {
   section {
     padding-left  : 15rem;
     padding-right : 15rem;
@@ -143,6 +142,25 @@ footer {
   nav {
     padding-left  : 15rem;
     padding-right : 15rem;
+  }
+  .scroll-top-button {
+    left     : 90%;
+    position : fixed;
+    top      : 90%;
+    z-index  : 999;
+  }
+}
+
+// XX-Large devices (larger desktops, 1900px and up)
+@media (min-width : 1900px) {
+  section {
+    padding-left  : 30rem;
+    padding-right : 30rem;
+    padding-top   : calc(var(--header-height) + 1rem);
+  }
+  nav {
+    padding-left  : 30rem;
+    padding-right : 30rem;
   }
   .scroll-top-button {
     left     : 95%;

@@ -65,7 +65,7 @@ export class AppComponent implements AfterViewInit {
       value: LANGUAGES
     }>(this.languageOptions[0], {nonNullable: true});
     this.initLanguageSubscription();
-    this.isMobile = window.innerWidth < 768;
+    this.isMobile = window.innerWidth < 900;
   }
 
   ngAfterViewInit(): void {
@@ -78,7 +78,7 @@ export class AppComponent implements AfterViewInit {
       }
     }, true);
     window.addEventListener('resize', () => {
-      this.isMobile = window.innerWidth < 768;
+      this.isMobile = window.innerWidth < 900;
     });
   }
 
