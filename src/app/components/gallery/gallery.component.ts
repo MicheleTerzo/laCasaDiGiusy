@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
 import { NgForOf } from '@angular/common';
 import { PerkBoxComponent } from '../perk-box/perk-box.component';
 import { GalleriaModule } from 'primeng/galleria';
@@ -47,7 +47,7 @@ export class GalleryComponent implements AfterViewInit {
   ];
 
   ngAfterViewInit(): void {
-    this.startCarousel();
+    this.patchImageStyle(this.imageTemplate?.nativeElement);
   }
 
   protected nextImage(imageContainerElement: HTMLDivElement) {
@@ -66,12 +66,6 @@ export class GalleryComponent implements AfterViewInit {
     }
     this.index = this.images.length - 1;
     return this.patchImageStyle(imageContainerElement, this.index);
-  }
-
-  private startCarousel() {
-    const element = this.imageTemplate?.nativeElement as HTMLDivElement;
-    this.patchImageStyle(element, this.index);
-    setInterval(() => this.nextImage(this.imageTemplate?.nativeElement), 4000)
   }
 
   private patchImageStyle(element: HTMLDivElement, index?: number) {
