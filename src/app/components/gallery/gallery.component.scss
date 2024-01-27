@@ -1,1 +1,6 @@
-
+.image-container {
+  // background: url("../../../assets/img/IMG-1.jpg");
+  background-position: center;
+  background-size: cover;
+  transition: all 300ms ease-in-out;
+}

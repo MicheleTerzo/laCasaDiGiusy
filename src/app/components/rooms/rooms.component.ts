@@ -6,6 +6,7 @@ import {GalleriaModule} from 'primeng/galleria';
 import {TranslateModule} from '@ngx-translate/core';
 import {ButtonModule} from 'primeng/button';
 import {BOOKING_URL} from '../../config';
+import {ObserveVisibilityDirective} from '../../utils/intersection-observer.directive';
 
 @Component({
   selector: 'app-rooms',
@@ -15,7 +16,8 @@ import {BOOKING_URL} from '../../config';
     PerkBoxComponent,
     GalleriaModule,
     TranslateModule,
-    ButtonModule
+    ButtonModule,
+    ObserveVisibilityDirective
   ],
   templateUrl: './rooms.component.html',
   styleUrls: ['./rooms.component.scss']
@@ -38,6 +40,11 @@ export class RoomsComponent {
       iconClass: 'fa-solid fa-id-card'
     }
   ];
+
+  addClass(element: HTMLElement) {
+    console.log(element);
+    element.classList.add('item-visible');
+  }
 
   protected goToBooking() {
     window.open(BOOKING_URL, '_blank');

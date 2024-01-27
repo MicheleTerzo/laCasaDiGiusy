@@ -1,27 +1,70 @@
 <header [ngClass]="{'invisible-header': isWindowAtTop, 'visible-header':!isWindowAtTop}">
-  <div class="grid h-full">
-    <div class="col-6 flex align-items-center pl-3 pb-0">
-      <img alt=""
-           class="logo"
-           src="assets/img/logo.png">
+  <nav>
+    <div class="grid h-full">
+      <div class="col-6 md:col-2 flex align-items-center pl-3 pb-0">
+        <img alt="" class="logo" src="assets/img/logo.png">
+      </div>
+      <div class="col-6 md:col-10 pr-3 pb-0 flex justify-content-end align-items-center">
+        <p-button (click)="showSidebar()" *ngIf="isMobile" icon="fa-solid fa-bars" styleClass="text-2xl custom-color"
+          [text]="true" [rounded]="true" />
+        <ng-container *ngIf="!isMobile">
+          <div (click)="navigateToSection(item.sectionName)"
+               *ngFor="let item of navigationItems"
+               class="mx-3 cursor-pointer text-lg nav-text-hover">
+            <span [class]="item.styleClass">{{item.label | translate | uppercase}}</span>
+          </div>
+          <div class="mx-3">
+            <p-dropdown [formControl]="languageControl"
+                        [options]="languageOptions"
+                        optionLabel="label"
+                        styleClass="custom-dropdown">
+              <ng-template pTemplate="selectedItem">
+                <div *ngIf="languageControl as control"
+                     class="flex align-items-center gap-2">
+                  <img [src]="'assets/img/flag-icon/' + control.value.value.toLowerCase() + '.png'"
+                       alt=""
+                       style="width: 25px"/>
+                </div>
+              </ng-template>
+              <ng-template let-country
+                           pTemplate="item">
+                <div class="flex align-items-center gap-2">
+                  <img [src]="'assets/img/flag-icon/' + country.value.toLowerCase()+ '.png'"
+                       alt=""
+                       style="width: 25px"/>
+                </div>
+              </ng-template>
+            </p-dropdown>
+          </div>
+        </ng-container>
+      </div>
     </div>
-    <div class="col-6 pr-3 pb-0 flex justify-content-end align-items-center">
-      <p-button (click)="showSidebar()"
-                icon="fa-solid fa-bars"
-                styleClass="text-2xl p-button-rounded p-button-text custom-color"/>
-    </div>
-  </div>
+  </nav>
 </header>
+
 <main>
-  <p-sidebar [(visible)]="showMobileMenu"
-             [showCloseIcon]="false"
-             position="right">
+  <p-sidebar *ngIf="isMobile" [(visible)]="showMobileMenu" [showCloseIcon]="false" position="right">
     <ng-template pTemplate="header">
       <div class="grid w-full">
-        <div class="col-12 flex justify-content-end">
-          <p-button (click)="onCloseMenu()"
-                    icon="fa-solid fa-times"
-                    styleClass="text-2xl p-button-rounded p-button-text custom-color"/>
+        <div class="col-12 flex justify-content-between align-items-center">
+          <p-dropdown [formControl]="languageControl" [options]="languageOptions" optionLabel="label"
+            styleClass="custom-dropdown">
+            <ng-template pTemplate="selectedItem">
+              <div *ngIf="languageControl as control" class="flex align-items-center gap-2">
+                <img [src]="'assets/img/flag-icon/' + control.value.value.toLowerCase() + '.png'" alt=""
+                  style="width: 25px" />
+                <!--              {{control.value.label}}-->
+              </div>
+            </ng-template>
+            <ng-template let-country pTemplate="item">
+              <div class="flex align-items-center gap-2">
+                <img [src]="'assets/img/flag-icon/' + country.value.toLowerCase()+ '.png'" alt="" style="width: 25px" />
+                <!--              {{country.label}}-->
+              </div>
+            </ng-template>
+          </p-dropdown>
+          <p-button (click)="onCloseMenu()" icon="fa-solid fa-times"  [text]="true" [rounded]="true"
+            styleClass="text-2xl custom-color" />
         </div>
         <div class="col-12 flex justify-content-center align-items-center">
           <h1 class="hand-written-font custom-color text-4xl">La Casa di Giusy</h1>
@@ -29,49 +72,33 @@
       </div>
     </ng-template>
     <div class="grid mt-3">
-      <div *ngFor="let item of navigationItems"
-           class="col-12 mb-2 mt-2 flex justify-content-start align-items-center">
-        <h4 (click)="navigateToSection(item.sectionName)"
-            [class]="item.styleClass"
-            class="m-0 p-0 cursor-pointer">{{item.label | translate | uppercase}}</h4>
+      <div *ngFor="let item of navigationItems" class="col-12 mb-2 mt-2 flex justify-content-start align-items-center">
+        <h4 (click)="navigateToSection(item.sectionName)" [class]="item.styleClass" class="m-0 p-0 cursor-pointer">
+          {{item.label | translate | uppercase}}</h4>
       </div>
     </div>
   </p-sidebar>
-  <section #jumbotronSection
-           id="jumbotron">
-    <app-jumbotron [languageControl]="languageControl"
-                   [languageOptions]="languageOptions"/>
+  <section #jumbotronSection id="jumbotron">
+    <app-jumbotron />
   </section>
-  <section #aboutSection
-           class="px-3 pb-8"
-           id="about">
-    <app-about/>
+  <section #aboutSection class="pb-8" id="about">
+    <app-about />
   </section>
-  <section #roomsSection
-           class="px-3 pb-8"
-           id="rooms">
-    <app-rooms/>
+  <section #roomsSection class="pb-8" id="rooms">
+    <app-rooms />
   </section>
-  <section #gallerySection
-           class="px-3 pb-8 h-50rem"
-           id="gallery">
-    <app-gallery/>
+  <section #gallerySection class="pb-8" id="gallery">
+    <app-gallery />
   </section>
-  <section #mapSection
-           class="pb-8"
-           id="maps">
-    <app-maps/>
+  <section #mapSection class="pb-8" id="maps">
+    <app-maps />
   </section>
-  <section #contactsSection
-           class="px-3 pb-8"
-           id="contacts">
-    <app-contacts/>
+  <section #contactsSection class="pb-8 " id="contacts">
+    <app-contacts />
   </section>
-  <p-button (onClick)="scrollToTop()"
-            *ngIf="!isWindowAtTop"
-            icon="fa-solid fa-arrow-up"
-            styleClass="scroll-top-button custom-primary-button p-button-rounded text-2xl"/>
+  <p-button (onClick)="scrollToTop()" *ngIf="!isWindowAtTop" icon="fa-solid fa-arrow-up"
+    styleClass="scroll-top-button custom-primary-button p-button-rounded text-2xl" [rounded]="true" />
 </main>
 <footer>
-  <app-footer/>
+  <app-footer />
 </footer>

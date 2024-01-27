@@ -1,11 +1,10 @@
 #jumbotron {
   background-blend-mode : darken;
   background-color      : rgba(0, 0, 0, 0.4);
-  background-image      : url("../assets/img/ROOM-1_1.jpg");
+  background-image      : url("../assets/img/ROOM-2_1.jpg");
   background-position   : center;
   background-size       : cover;
   height                : 100vh;
-  //margin-top            : -8rem;
 }
 
 app-maps {
@@ -20,26 +19,3 @@ app-maps {
   background : var(--secondary-bg-color);
 }
 
-#contacts {
-  //background : var(--secondary-bg-color);
-  //color      : #FFF;
-}
-
-section {
-  padding-top : calc(var(--header-height) - .5rem);
-}
-
-header {
-  height   : var(--header-height);
-  padding  : 0;
-  position : fixed;
-  top      : 0;
-  width    : 100%;
-  z-index  : 999;
-}
-
-footer {
-  background : var(--secondary-bg-color);
-  color      : #FFF;
-  height     : var(--footer-height);
-}

@@ -1,15 +1,19 @@
-<h1 class="mt-0 mb-5 text-5xl custom-text-color text-center">{{'Rooms' | translate}}</h1>
+<h1 class="mt-0 mb-5 text-5xl custom-text-color text-center item-invisible"
+    observeVisibility>{{'Rooms' | translate}}</h1>
 <div class="grid">
-  <div class="col-12 md:col-6 lg:col-4 mb-8">
-    <div class="room">
+  <div class="col-12 md:col-5 mb-8">
+    <div class="room item-invisible"
+         observeVisibility>
       <div class="image-container">
         <img alt="room image"
              src="assets/img/ROOM-1_1.jpg">
       </div>
-      <div class="description p-3 background-primary">
-        <h1>Venere</h1>
-        <p>{{'Venere room description' | translate}}</p>
-        <div class="mt-5 flex justify-content-end">
+      <div class="description p-3 background-primary h-auto min-h-20rem flex flex-column justify-content-between">
+        <div>
+          <h1>Afrodite</h1>
+          <p>{{'Afrodite room description' | translate}}</p>
+        </div>
+        <div class="mt-2 xl:mt-5 flex justify-content-end">
           <p-button (onClick)="goToBooking()"
                     [label]="'Book now' | translate"
                     styleClass="p-button-sm p-button-text custom-text-button"/>
@@ -17,16 +21,19 @@
       </div>
     </div>
   </div>
-  <div class="col-12 md:col-6 lg:col-4 mb-8">
-    <div class="room">
+  <div class="col-12 md:col-5 md:col-offset-2 mb-8">
+    <div class="room item-invisible"
+         observeVisibility>
       <div class="image-container">
         <img alt="room image"
-             src="assets/img/ROOM-1_1.jpg">
+             src="assets/img/ROOM-2_1.jpg">
       </div>
-      <div class="description p-3 background-primary">
-        <h1>Diana</h1>
-        <p>{{'Diana room description' | translate}}</p>
-        <div class="mt-5 flex justify-content-end">
+      <div class="description p-3 background-primary h-auto min-h-20rem flex flex-column justify-content-between">
+        <div>
+          <h1>Diana</h1>
+          <p>{{'Diana room description' | translate}}</p>
+        </div>
+        <div class="mt-2 xl:mt-5 flex justify-content-end">
           <p-button (onClick)="goToBooking()"
                     [label]="'Book now' | translate"
                     styleClass="p-button-sm p-button-text custom-text-button"/>
@@ -35,13 +42,17 @@
     </div>
   </div>
 </div>
-<div class="custom-divider-inverted mt-5 mb-5"></div>
+
+<div class="custom-divider-inverted mt-5 mb-5 item-invisible"
+     observeVisibility></div>
 <div class="grid">
   <div class="col-12">
-    <h1 class="mt-0 mb-5 text-5xl custom-text-color text-center">{{'Main bonuses' | translate}}</h1>
+    <h1 class="mt-0 mb-5 text-5xl custom-text-color text-center item-invisible"
+        observeVisibility>{{'Main bonuses' | translate}}</h1>
   </div>
   <ng-container *ngFor="let perk of facilitiesPerk">
-    <div class="col-12 md:col-6 lg:col-4">
+    <div class="col-12 md:col-6 lg:col-4 item-invisible"
+         observeVisibility>
       <app-perk-box [description]="perk.description"
                     [iconClass]="perk.iconClass"
                     [invertedColor]="true"

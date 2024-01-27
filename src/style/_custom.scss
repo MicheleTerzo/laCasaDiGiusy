@@ -40,8 +40,23 @@
   }
 }
 
-.h-50rem {
-  height : 50rem;
+.p-dropdown.custom-dropdown {
+  background : transparent;
+  border     : none;
+  box-shadow : none;
+
+  .p-dropdown-label {
+    padding : 0;
+  }
+
+  .p-dropdown-trigger {
+    color : var(--custom-text-color)
+  }
+
+  .p-dropdown-items-wrapper {
+    -ms-overflow-style : none; /* IE and Edge */
+    scrollbar-width    : none; /* Firefox */
+  }
 }
 
 .custom-color {
@@ -83,17 +98,80 @@
 
 .invisible-header {
   background : transparent;
+  color      : var(--custom-text-color);
   transition : background-color 300ms ease-in-out;
 }
 
 .visible-header {
   background : var(--header-bg-color);
+  //color      : var(--secondary-bg-color);
   transition : background-color 300ms ease-in-out;
+
+  .nav-text-hover {
+    background-image : linear-gradient(
+        to right,
+        var(--custom-primary),
+        var(--custom-primary) 50%,
+        var(--secondary-bg-color) 50%);
+  }
 }
 
-.scroll-top-button {
-  left     : 80%;
-  position : fixed;
-  top      : 90%;
-  z-index  : 999;
+.nav-text-hover {
+  -webkit-background-clip : text;
+  background-image        : linear-gradient(
+      to right,
+      var(--custom-primary),
+      var(--custom-primary) 50%,
+      var(--custom-text-color) 50%);
+  background-position     : -100%;
+  background-size         : 200% 100%;
+  display                 : block;
+  font-size               : 26px;
+  font-weight             : bold;
+  line-height             : 1;
+  padding                 : 5px 0;
+  position                : relative;
+  text-align              : center;
+  text-decoration         : none;
+  -webkit-text-fill-color : transparent;
+  transition              : all 300ms ease-in-out;
+  z-index                 : 1;
+
+  &:before {
+    background : var(--custom-primary);
+    bottom     : -3px;
+    content    : '';
+    display    : block;
+    height     : 3px;
+    left       : 0;
+    position   : absolute;
+    transition : all 0.3s ease-in-out;
+    width      : 0;
+    z-index    : 0;
+  }
+
+  &:hover {
+    background-position : 0;
+
+    &:before {
+      width : 100%;
+    }
+  }
+}
+
+.item-invisible {
+  opacity  : 0;
+  position : relative;
+  top      : 50px;
+}
+
+.item-visible {
+  opacity    : 1;
+  position   : relative;
+  top        : 0;
+  transition : all 300ms ease-in-out;
+}
+
+.h-40rem {
+  height: 40rem
 }

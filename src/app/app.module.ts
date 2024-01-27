@@ -20,6 +20,9 @@ import {MultiTranslateHttpLoader} from 'ngx-translate-multi-http-loader';
 import {MapsComponent} from './components/maps/maps.component';
 import {initializeApp, provideFirebaseApp} from '@angular/fire/app';
 import {FIREBASE_CONFIG} from './config';
+import {ObserveVisibilityDirective} from './utils/intersection-observer.directive';
+import {DropdownModule} from 'primeng/dropdown';
+import {ReactiveFormsModule} from '@angular/forms';
 
 function HttpLoaderFactory(http: HttpBackend): MultiTranslateHttpLoader {
   return new MultiTranslateHttpLoader(http, [
@@ -55,9 +58,13 @@ function HttpLoaderFactory(http: HttpBackend): MultiTranslateHttpLoader {
     SidebarModule,
     ScrollTopModule,
     HttpClientModule,
-    MapsComponent
+    MapsComponent,
+    ObserveVisibilityDirective,
+    DropdownModule,
+    ReactiveFormsModule
   ],
   providers: [],
+  exports: [],
   bootstrap: [AppComponent]
 })
 export class AppModule {
