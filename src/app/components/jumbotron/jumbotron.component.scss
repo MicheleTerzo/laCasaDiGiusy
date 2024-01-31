@@ -2,15 +2,22 @@
   height: 100%;
 
   .start-container {
-    height: 70%;
+    height: 80%;
   }
 
   .end-container {
-    height: 30%;
+    height: 20%;
   }
 
   .book-now-button:hover {
     background-color: #a80d63ba;
     border-color: #a80d63ba;
   }
+
+  .valentine-section {
+    background: url('../../../assets/img/valentine-banner.png');
+    background-position: top;
+    color: var(--custom-primary)
+  }
+
 }
