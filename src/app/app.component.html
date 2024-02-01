@@ -72,7 +72,7 @@
     </div>
   </p-sidebar>
   <section #jumbotronSection id="jumbotron">
-    <app-jumbotron />
+    <app-jumbotron (navigateToJollySection)="navigateToSection(sections.JOLLY)" />
   </section>
   <section class="standard-section pb-8" #aboutSection id="about">
     <app-about />
@@ -85,6 +85,9 @@
   </section>
   <section class="standard-section pb-8" #mapSection id="maps">
     <app-maps />
+  </section>
+  <section class="standard-section pb-8" #jollySection id="jolly">
+    <app-valentine-promo />
   </section>
   <section class="standard-section pb-8" #contactsSection id="contacts">
     <app-contacts />

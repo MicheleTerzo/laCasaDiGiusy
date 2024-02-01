@@ -1,21 +1,29 @@
 #jumbotron {
-  background-blend-mode : darken;
-  background-color      : rgba(0, 0, 0, 0.4);
-  background-image      : url("../assets/img/ROOM-2_1.jpg");
-  background-position   : center;
-  background-size       : cover;
-  height                : 100vh;
+  background-blend-mode: darken;
+  background-color: rgba(0, 0, 0, 0.4);
+  background-image: url("../assets/img/ROOM-2_1.jpg");
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
 }
 
 app-maps {
-  padding : 0;
+  padding: 0;
 }
 
 #rooms {
-  background : var(--secondary-bg-color);
+  background: var(--secondary-bg-color);
 }
 
 #maps {
-  background : var(--secondary-bg-color);
+  background: var(--secondary-bg-color);
 }
 
+#jolly {
+  background: url("../assets/img/valentine-section-bg.png");
+  background-color: rgba(0,0,0,0.15);
+  background-blend-mode: multiply;
+  background-position: bottom;
+  background-size: cover;
+}
+//fefff4 ffd6d6 ffc8c8 #ffc5c5 ffb7b7

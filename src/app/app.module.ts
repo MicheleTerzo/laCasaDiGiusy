@@ -23,6 +23,7 @@ import {FIREBASE_CONFIG} from './config';
 import {ObserveVisibilityDirective} from './utils/intersection-observer.directive';
 import {DropdownModule} from 'primeng/dropdown';
 import {ReactiveFormsModule} from '@angular/forms';
+import { ValentinePromoComponent } from "./components/custom-sections/valentine-promo/valentine-promo.component";
 
 function HttpLoaderFactory(http: HttpBackend): MultiTranslateHttpLoader {
   return new MultiTranslateHttpLoader(http, [
@@ -31,41 +32,42 @@ function HttpLoaderFactory(http: HttpBackend): MultiTranslateHttpLoader {
 }
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
-  imports: [
-    TranslateModule.forRoot({
-      loader: {
-        provide: TranslateLoader,
-        useFactory: HttpLoaderFactory,
-        deps: [HttpBackend]
-      },
-      defaultLanguage: LANGUAGES.IT
-    }),
-    provideFirebaseApp(() => initializeApp(FIREBASE_CONFIG)),
-    BrowserModule,
-    BrowserAnimationsModule,
-    RouterOutlet,
-    JumbotronComponent,
-    RoomsComponent,
-    AboutComponent,
-    GalleryComponent,
-    ContactsComponent,
-    FooterComponent,
-    ButtonModule,
-    SharedModule,
-    SidebarModule,
-    ScrollTopModule,
-    HttpClientModule,
-    MapsComponent,
-    ObserveVisibilityDirective,
-    DropdownModule,
-    ReactiveFormsModule
-  ],
-  providers: [],
-  exports: [],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent
+    ],
+    providers: [],
+    exports: [],
+    bootstrap: [AppComponent],
+    imports: [
+        TranslateModule.forRoot({
+            loader: {
+                provide: TranslateLoader,
+                useFactory: HttpLoaderFactory,
+                deps: [HttpBackend]
+            },
+            defaultLanguage: LANGUAGES.IT
+        }),
+        provideFirebaseApp(() => initializeApp(FIREBASE_CONFIG)),
+        BrowserModule,
+        BrowserAnimationsModule,
+        RouterOutlet,
+        JumbotronComponent,
+        RoomsComponent,
+        AboutComponent,
+        GalleryComponent,
+        ContactsComponent,
+        FooterComponent,
+        ButtonModule,
+        SharedModule,
+        SidebarModule,
+        ScrollTopModule,
+        HttpClientModule,
+        MapsComponent,
+        ObserveVisibilityDirective,
+        DropdownModule,
+        ReactiveFormsModule,
+        ValentinePromoComponent
+    ]
 })
 export class AppModule {
 }
