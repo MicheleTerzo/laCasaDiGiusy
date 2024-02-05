@@ -17,7 +17,8 @@
     <div class="text-center">
       <p class="mb-1 text-xl md:text-4xl xl:text-6xl font-bold">{{'Valentine section title' | translate}}!</p>
       <p class="text-lg md:text-xl xl:text-2xl">{{'Valentine banner offer' | translate}}</p>
-      <p-button styleClass="custom-primary-button" [size]="'small'" label="Scopri di piu" (onClick)="onNavigateToJollySection()"/>
+      <p-button styleClass="custom-primary-button" [size]="'small'" [label]="'Discover more' | translate"
+        (onClick)="onNavigateToJollySection()" />
     </div>
     <div class="flex lg:flex-row flex-column justify-content-center align-items-center">
       <i class="fa-regular fa-heart text-lg md:text-4xl lg:text-6xl m-0 lg:mr-4"></i>
