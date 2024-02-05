@@ -1,9 +1,9 @@
-import {AfterViewInit, Component, ElementRef, inject, ViewChild} from '@angular/core';
-import {LANGUAGES, SECTIONS} from './utils/enums';
-import {BOOKING_URL} from './config';
-import {TranslateService} from '@ngx-translate/core';
-import {FormControl} from '@angular/forms';
-import {takeUntilDestroyed} from '@angular/core/rxjs-interop';
+import { AfterViewInit, Component, ElementRef, inject, ViewChild } from '@angular/core';
+import { LANGUAGES, SECTIONS } from './utils/enums';
+import { BOOKING_URL } from './config';
+import { TranslateService } from '@ngx-translate/core';
+import { FormControl } from '@angular/forms';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
 @Component({
   selector: 'app-root',
@@ -17,6 +17,8 @@ export class AppComponent implements AfterViewInit {
   @ViewChild('contactsSection') contactsSection?: ElementRef;
   @ViewChild('jumbotronSection') jumbotronSection?: ElementRef;
   @ViewChild('mapSection') mapsSection?: ElementRef;
+  @ViewChild('jollySection') jollySection?: ElementRef;
+  sections = SECTIONS;
   languageControl: FormControl<{ label: string, value: LANGUAGES }>;
   isWindowAtTop = true;
   languageOptions: { label: string, value: LANGUAGES }[] = [];
@@ -52,7 +54,12 @@ export class AppComponent implements AfterViewInit {
       label: 'Book now',
       sectionName: SECTIONS.BOOK,
       styleClass: 'custom-color'
-    }
+    },
+    {
+      label: '',
+      sectionName: SECTIONS.JOLLY,
+      styleClass: 'custom-color'
+    },
   ];
   private readonly _translateService = inject(TranslateService);
 
@@ -63,7 +70,7 @@ export class AppComponent implements AfterViewInit {
     this.languageControl = new FormControl<{
       label: string,
       value: LANGUAGES
-    }>(this.languageOptions[0], {nonNullable: true});
+    }>(this.languageOptions[0], { nonNullable: true });
     this.initLanguageSubscription();
     this.isMobile = window.innerWidth < 900;
   }
@@ -105,12 +112,15 @@ export class AppComponent implements AfterViewInit {
       case SECTIONS.MAPS:
         htmlElement = this.mapsSection?.nativeElement;
         break;
+      case SECTIONS.JOLLY:
+        htmlElement = this.jollySection?.nativeElement;
+        break;
       case SECTIONS.BOOK:
         window.open(BOOKING_URL, '_blank');
         break;
     }
     if (htmlElement) {
-      htmlElement.scrollIntoView({behavior: 'smooth'});
+      htmlElement.scrollIntoView({ behavior: 'smooth' });
     }
   }
 
@@ -120,17 +130,17 @@ export class AppComponent implements AfterViewInit {
 
   protected scrollToTop() {
     if (this.jumbotronSection) {
-      this.jumbotronSection.nativeElement.scrollIntoView({behavior: 'smooth'});
+      this.jumbotronSection.nativeElement.scrollIntoView({ behavior: 'smooth' });
     }
   }
 
   private buildLanguagesOptions(): void {
     this.languageOptions = [
-      {label: 'Italiano', value: LANGUAGES.IT},
-      {label: 'English', value: LANGUAGES.EN},
-      {label: 'Detusch', value: LANGUAGES.DE},
-      {label: 'Francois', value: LANGUAGES.FR},
-      {label: 'Espanol', value: LANGUAGES.ES}
+      { label: 'Italiano', value: LANGUAGES.IT },
+      { label: 'English', value: LANGUAGES.EN },
+      { label: 'Detusch', value: LANGUAGES.DE },
+      { label: 'Francois', value: LANGUAGES.FR },
+      { label: 'Espanol', value: LANGUAGES.ES }
     ];
   }
 

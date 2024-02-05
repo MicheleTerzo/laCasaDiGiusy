@@ -8,30 +8,23 @@
         <p-button (click)="showSidebar()" *ngIf="isMobile" icon="fa-solid fa-bars" styleClass="text-2xl custom-color"
           [text]="true" [rounded]="true" />
         <ng-container *ngIf="!isMobile">
-          <div (click)="navigateToSection(item.sectionName)"
-               *ngFor="let item of navigationItems"
-               class="mx-3 cursor-pointer text-lg nav-text-hover">
+          <div (click)="navigateToSection(item.sectionName)" *ngFor="let item of navigationItems"
+            class="mx-3 cursor-pointer text-lg nav-text-hover">
             <span [class]="item.styleClass">{{item.label | translate | uppercase}}</span>
           </div>
           <div class="mx-3">
-            <p-dropdown [formControl]="languageControl"
-                        [options]="languageOptions"
-                        optionLabel="label"
-                        styleClass="custom-dropdown">
+            <p-dropdown [formControl]="languageControl" [options]="languageOptions" optionLabel="label"
+              styleClass="custom-dropdown">
               <ng-template pTemplate="selectedItem">
-                <div *ngIf="languageControl as control"
-                     class="flex align-items-center gap-2">
-                  <img [src]="'assets/img/flag-icon/' + control.value.value.toLowerCase() + '.png'"
-                       alt=""
-                       style="width: 25px"/>
+                <div *ngIf="languageControl as control" class="flex align-items-center gap-2">
+                  <img [src]="'assets/img/flag-icon/' + control.value.value.toLowerCase() + '.png'" alt=""
+                    style="width: 25px" />
                 </div>
               </ng-template>
-              <ng-template let-country
-                           pTemplate="item">
+              <ng-template let-country pTemplate="item">
                 <div class="flex align-items-center gap-2">
-                  <img [src]="'assets/img/flag-icon/' + country.value.toLowerCase()+ '.png'"
-                       alt=""
-                       style="width: 25px"/>
+                  <img [src]="'assets/img/flag-icon/' + country.value.toLowerCase()+ '.png'" alt=""
+                    style="width: 25px" />
                 </div>
               </ng-template>
             </p-dropdown>
@@ -63,7 +56,7 @@
               </div>
             </ng-template>
           </p-dropdown>
-          <p-button (click)="onCloseMenu()" icon="fa-solid fa-times"  [text]="true" [rounded]="true"
+          <p-button (click)="onCloseMenu()" icon="fa-solid fa-times" [text]="true" [rounded]="true"
             styleClass="text-2xl custom-color" />
         </div>
         <div class="col-12 flex justify-content-center align-items-center">
@@ -79,21 +72,24 @@
     </div>
   </p-sidebar>
   <section #jumbotronSection id="jumbotron">
-    <app-jumbotron />
+    <app-jumbotron (navigateToJollySection)="navigateToSection(sections.JOLLY)" />
   </section>
-  <section #aboutSection class="pb-8" id="about">
+  <section class="standard-section pb-8" #aboutSection id="about">
     <app-about />
   </section>
-  <section #roomsSection class="pb-8" id="rooms">
+  <section class="standard-section pb-8" #roomsSection id="rooms">
     <app-rooms />
   </section>
-  <section #gallerySection class="pb-8" id="gallery">
+  <section class="standard-section pb-8" #gallerySection id="gallery">
     <app-gallery />
   </section>
-  <section #mapSection class="pb-8" id="maps">
+  <section class="standard-section pb-8" #mapSection id="maps">
     <app-maps />
   </section>
-  <section #contactsSection class="pb-8 " id="contacts">
+  <section class="standard-section pb-8" #jollySection id="jolly">
+    <app-valentine-promo />
+  </section>
+  <section class="standard-section pb-8" #contactsSection id="contacts">
     <app-contacts />
   </section>
   <p-button (onClick)="scrollToTop()" *ngIf="!isWindowAtTop" icon="fa-solid fa-arrow-up"
