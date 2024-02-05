@@ -4,7 +4,8 @@ export enum SECTIONS {
   GALLERY = 2,
   CONTACTS = 3,
   MAPS = 4,
-  BOOK = 5
+  BOOK = 5,
+  JOLLY = 6
 }
 
 export enum LANGUAGES {
